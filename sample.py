@@ -8,7 +8,7 @@ class ApplicationForm:
     def __init__(self, form):
         self.dialog = form
         self.dialog.setObjectName("Dialog")
-        self.dialog.resize(250, 200)
+        self.dialog.resize(350, 250)
         # True is a Boolean, dont enter as an string
         self.dialog.setEnabled(True)
         self.dialog.setWindowTitle("Ajith")
