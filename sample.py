@@ -9,19 +9,20 @@ class ApplicationForm:
         self.dialog = form
         self.dialog.setObjectName("Dialog")
         self.dialog.resize(250, 200)
+        # True is a Boolean, dont enter as an string
         self.dialog.setEnabled(True)
         self.dialog.setWindowTitle("Ajith")
 
 #Execute Application
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    form = QtWidgets.QWidget()
+    App = QtWidgets.QWidget()
 
     #Give the form class
-    ui = ApplicationForm(form)
+    userI = ApplicationForm(App)
 
     #Show Form
-    form.show()
+    App.show()
 
     #Close the Form
     sys.exit(app.exec())
