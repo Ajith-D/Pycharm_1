@@ -20,8 +20,6 @@ if __name__ == "__main__":
     #Give the form class
     ui = ApplicationForm(form)
 
-
-
     #Show Form
     form.show()
 
