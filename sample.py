@@ -9,7 +9,7 @@ class ApplicationForm:
         self.dialog = form
         self.dialog.setObjectName("Dialog")
         self.dialog.resize(350, 250)
-        # True is a Boolean, dont enter as an string
+        # True is a Boolean, don't enter as a string
         self.dialog.setEnabled(True)
         self.dialog.setWindowTitle("Ajith")
 
