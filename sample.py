@@ -19,7 +19,7 @@ class ApplicationForm:
         self.PushB = None
 
     # 4  Set Widgets
-    def setup_Widgets(self):
+    def Widgets(self):
 
         # Label
         self.lb_title = QtWidgets.QLabel(self.dialog)
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     userI = ApplicationForm(App)
 
     # Initialize the Widget
-    userI.setup_Widgets()
+    userI.Widgets()
 
     # Show Form
     App.show()
