@@ -32,12 +32,13 @@ class ApplicationForm:
         self.push.setText("Welcome")
 
         # Set Signal
-        self.push.clicked.connect(self.Execute)
+        self.push.clicked.connect(self.Event)
+
         # Set Slot
         QtCore.QMetaObject.connectSlotsByName(self.dialog)
 
     # 5 Set Events
-    def Execute(self):
+    def Event(self):
         self.lb_title.setText("Learning PyCharm")
 
 
