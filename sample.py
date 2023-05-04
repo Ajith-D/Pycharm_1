@@ -15,24 +15,24 @@ class ApplicationForm:
 
         # Give the introduction about widgets on constructor itself
         self.lb_title = None
-        self.push = None
+        self.pushb = None
 
     # 4 Set Widgets
     def widgets(self):
         # Label
         self.lb_title = QtWidgets.QLabel(self.dialog)
         self.lb_title.setObjectName("Label")
-        self.lb_title.setGeometry(200, 140, 130, 30)
-        self.lb_title.setText("Hello")
+        self.lb_title.setGeometry(155, 140, 130, 30)
+        self.lb_title.setText("Hello!")
 
         # Push Button
-        self.push = QtWidgets.QPushButton(self.dialog)
-        self.push.setObjectName("Button")
-        self.push.setGeometry(150, 170, 130, 30)
-        self.push.setText("Welcome")
+        self.pushb = QtWidgets.QPushButton(self.dialog)
+        self.pushb.setObjectName("Button")
+        self.pushb.setGeometry(150, 170, 160, 30)
+        self.pushb.setText("Welcome")
 
         # Set Signal
-        self.push.clicked.connect(self.Event)
+        self.pushb.clicked.connect(self.Event)
 
         # Set Slot
         QtCore.QMetaObject.connectSlotsByName(self.dialog)
