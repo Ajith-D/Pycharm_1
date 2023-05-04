@@ -5,44 +5,40 @@ from PyQt6 import QtGui, QtCore, QtWidgets
 
 # 2 Create One Class
 class ApplicationForm:
-    # 3 set dialog
+    # 3 Set Dialog
     def __init__(self, form):
         self.dialog = form
         self.dialog.setObjectName("Dialog")
-        self.dialog.resize(350, 250)
-        # True is a Boolean, don't enter as a string
         self.dialog.setEnabled(True)
+        self.dialog.resize(450, 390)
         self.dialog.setWindowTitle("Ajith")
 
         # Give the introduction about widgets on constructor itself
         self.lb_title = None
-        self.PushB = None
+        self.push = None
 
-    # 4  Set Widgets
-    def Widgets(self):
-
+    # 4 Set Widgets
+    def widgets(self):
         # Label
         self.lb_title = QtWidgets.QLabel(self.dialog)
         self.lb_title.setObjectName("Label")
-        self.lb_title.setGeometry(125, 90, 130, 30)
-        self.lb_title.setText('Hello !')
+        self.lb_title.setGeometry(200, 140, 130, 30)
+        self.lb_title.setText("Hello")
 
         # Push Button
-        self.PushB = QtWidgets.QPushButton(self.dialog)
-        self.PushB.setObjectName("Button")
-        self.PushB.setGeometry(120, 120, 150, 30)
-        self.PushB.setText("Welcome")
+        self.push = QtWidgets.QPushButton(self.dialog)
+        self.push.setObjectName("Button")
+        self.push.setGeometry(150, 170, 130, 30)
+        self.push.setText("Welcome")
 
         # Set Signal
-        self.PushB.clicked.connect(self.Event)
-
+        self.push.clicked.connect(self.Execute)
         # Set Slot
         QtCore.QMetaObject.connectSlotsByName(self.dialog)
 
-    # 5 set Events
-    def Event(self):
-        # To change the text of the Label use 'lb_title' function
-        self.lb_title.setText("Iam Learning PyCharm")
+    # 5 Set Events
+    def Execute(self):
+        self.lb_title.setText("Learning PyCharm")
 
 
 # Execute Application
@@ -54,7 +50,7 @@ if __name__ == "__main__":
     userI = ApplicationForm(App)
 
     # Initialize the Widget
-    userI.Widgets()
+    userI.widgets()
 
     # Show Form
     App.show()
