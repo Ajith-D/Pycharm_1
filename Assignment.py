@@ -16,7 +16,7 @@ class ApplicationForm:
         # Give the introduction about widgets on constructor itself
         self.lb_title = None
         self.pushb1 = None
-        self.pushb2 =None
+        self.pushb2 = None
 
     # 4 Set Widgets
     def widgets(self):
