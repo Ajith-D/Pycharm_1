@@ -10,11 +10,12 @@ class AppForm:
         self.dialog = form
         self.dialog.setObjectName("My App")
         self.dialog.setEnabled(True)
+        self.dialog.resize(450, 390)
         self.dialog.setGeometry(QtCore.QRect(100, 100, 500, 40))
         self.dialog.setWindowTitle("My Window")
         self.dialog.setWindowOpacity(1.0)
         # Set Handling Size
-        self.dialog.setMaximumSize(500, 300)
+        self.dialog.setMaximumSize(700, 500)
         self.dialog.setMinimumSize(300, 180)
 
         #set ToolTip
@@ -29,8 +30,8 @@ class AppForm:
         #self.dialog.setFont(font)
 
         #Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.ArrowType)
-        self.dialog.setCursor(Cursor)
+        #Cursor = QtGui.QCursor(QtCore.Qt.ArrowType)
+        #self.dialog.setCursor(Cursor)
 
         #Define Fields
         self.pushb = None
@@ -54,14 +55,14 @@ class AppForm:
         self.label1.setToolTip('This is Label 1')
 
         # QLabel Properties
-        self.label1.setText('Hello Label')
+        self.label1.setText('Hello Label 1')
         self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
         self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop)
         self.label1.setMargin(2)
 
         #Set Font For Label 1
         font = QtGui.QFont('Times')
-        font.setPointSize(20)
+        font.setPointSize(12)
         font.setBold(True)
         font.setItalic(True)
         self.label1.setFont(font)
@@ -70,27 +71,27 @@ class AppForm:
         self.label1.setFrameShape(QtWidgets.QFrame.Shape.Box)
 
         # Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
-        self.label1.setCursor(Cursor)
+        #Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
+        #self.label1.setCursor(Cursor)
 
         # Label 2
         self.label2.setObjectName("Label 2")
         self.label2.setEnabled(True)
-        self.label2.setGeometry(QtCore.QRect(50, 40, 175, 40))
-        self.label2.setText("Hello Label 1")
+        self.label2.setGeometry(QtCore.QRect(70, 90, 175, 40))
+        self.label2.setText("Hello Label 2")
         self.label2.setStyleSheet("background-color: transparent")
         self.label2.setToolTip('This is Label 2')
 
         #Set Font For Label 2
         font = QtGui.QFont('Times')
-        font.setPointSize(20)
+        font.setPointSize(12)
         font.setBold(True)
         font.setItalic(True)
         self.label2.setFont(font)
 
         # Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
-        self.label2.setCursor(Cursor)
+        #Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
+        #self.label2.setCursor(Cursor)
 
         # Push Button
         self.pushb = QtWidgets.QPushButton(self.dialog)
