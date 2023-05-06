@@ -1,6 +1,6 @@
 # 1 Import Libraries
 import sys
-import PyQt5
+
 from PyQt5 import QtWidgets, QtCore, QtGui
 
 # 1 Create Class
@@ -30,8 +30,8 @@ class AppForm:
         #self.dialog.setFont(font)
 
         #Set Cursor
-        #Cursor = QtGui.QCursor(QtCore.Qt.ArrowType)
-        #self.dialog.setCursor(Cursor)
+        Cursor = QtGui.QCursor(QtCore.Qt.ArrowType)
+        self.dialog.setCursor(Cursor)
 
         #Define Fields
         self.pushb = None
@@ -71,8 +71,8 @@ class AppForm:
         self.label1.setFrameShape(QtWidgets.QFrame.Shape.Box)
 
         # Set Cursor
-        #Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
-        #self.label1.setCursor(Cursor)
+        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
+        self.label1.setCursor(Cursor)
 
         # Label 2
         self.label2.setObjectName("Label 2")
@@ -90,8 +90,8 @@ class AppForm:
         self.label2.setFont(font)
 
         # Set Cursor
-        #Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
-        #self.label2.setCursor(Cursor)
+        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor)
+        self.label2.setCursor(Cursor)
 
         # Push Button
         self.pushb = QtWidgets.QPushButton(self.dialog)
@@ -107,9 +107,10 @@ class AppForm:
 
     # 3 Set Events
     def Event(self):
-       self.label2.setText("Set Hello")
+        self.label2.setText("Set Hello")
 
-# 4 Execute Apllication
+
+# 4 Execute Application
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
@@ -125,18 +126,3 @@ if __name__ == "__main__":
 
     # Close the Form
     sys.exit(app.exec())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
