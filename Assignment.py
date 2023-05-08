@@ -7,50 +7,167 @@ from PyQt6 import QtGui, QtCore, QtWidgets
 class ApplicationForm:
     # 3 Set Dialog
     def __init__(self, form):
+        # Set Dialog
         self.dialog = form
+        #self.dialog = QtWidgets.QWidget()
         self.dialog.setObjectName("Dialog")
         self.dialog.setEnabled(True)
-        self.dialog.resize(450, 390)
-        self.dialog.setWindowTitle("My Window App")
+        self.dialog.resize(500, 600)
+        self.dialog.setWindowTitle("My Label Assignment")
+        self.dialog.setMaximumSize(600, 500)
+        self.dialog.setMinimumSize(400, 200)
 
-        # Give the introduction about widgets on constructor itself
-        self.lb_title = None
-        self.pushb1 = None
-        self.pushb2 = None
+        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
+        self.dialog.setCursor(Cursor)
+
+        # Define Fields
+        self.label1 = None
+        self.label2 = None
+        self.label3 = None
+        self.label4 = None
+        self.label5 = None
+        self.label6 = None
+        self.label7 = None
+
 
     # 4 Set Widgets
     def widgets(self):
-        # Label
-        self.lb_title = QtWidgets.QLabel(self.dialog)
-        self.lb_title.setObjectName("Label")
-        self.lb_title.setGeometry(190, 90, 130, 30)
-        self.lb_title.setText("Set Some Text")
+
+        self.label1 = QtWidgets.QLabel(self.dialog)
+        self.label2 = QtWidgets.QLabel(self.dialog)
+        self.label3 = QtWidgets.QLabel(self.dialog)
+        self.label4 = QtWidgets.QLabel(self.dialog)
+        self.label5 = QtWidgets.QLabel(self.dialog)
+        self.label6 = QtWidgets.QLabel(self.dialog)
+        self.label7 = QtWidgets.QLabel(self.dialog)
+
+        # Label 1
+        self.label1.setEnabled(True)
+        self.label1.setObjectName("Label")
+        self.label1.setGeometry(130, 50, 230, 30)
+        self.label1.setText("Label Assignment")
+        #self.label1.set
+        self.label1.setAutoFillBackground(True)
+        self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+
+        font = QtGui.QFont('Times')
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label1.setFont(font)
+
+
+        # Label 2
+        self.label2.setEnabled(True)
+        self.label2.setObjectName("Label")
+        self.label2.setGeometry(40, 120, 130, 30)
+        self.label2.setText("Label 1")
+        self.label2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+
+        font = QtGui.QFont('Times')
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label2.setFont(font)
+
+        # Label 3
+        self.label3.setEnabled(True)
+        self.label3.setObjectName("Label")
+        self.label3.setGeometry(110, 160, 130, 30)
+        self.label3.setText("Label 2")
+        self.label3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+
+        #self.label3.setBackgroundRole("Blue")
+
+        font = QtGui.QFont('Times')
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label3.setFont(font)
+
+        self.label4.setEnabled(True)
+        self.label4.setObjectName("Label")
+        self.label4.setGeometry(210, 200, 120, 20)
+        self.label4.setText("Label 3")
+        self.label4.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeft)
+        # Set QFrame Property
+        self.label4.setFrameShape(QtWidgets.QFrame.Shape.Box)
+
+        # self.label4.setBackgroundRole("Blue")
+
+        font = QtGui.QFont('Times')
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label4.setFont(font)
+
+        # Label 5
+        self.label5.setEnabled(True)
+        self.label5.setObjectName("Label")
+        self.label5.setGeometry(210, 250, 120, 20)
+        self.label5.setText("Label 3")
+        self.label5.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        # Set QFrame Property
+        self.label5.setFrameShape(QtWidgets.QFrame.Shape.Box)
+
+        # self.label5.setBackgroundRole("Blue")
+
+        font = QtGui.QFont('Times')
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label5.setFont(font)
+
+        # Label 6
+        self.label6.setEnabled(True)
+        self.label6.setObjectName("Label")
+        self.label6.setGeometry(210, 300, 120, 20)
+        self.label6.setText("Label 3")
+        self.label6.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
+        # Set QFrame Property
+        self.label6.setFrameShape(QtWidgets.QFrame.Shape.Box)
+
+        # self.label6.setBackgroundRole("Blue")
+
+        font = QtGui.QFont('Times')
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label6.setFont(font)
+
+        # Label 7
+        self.label7.setEnabled(True)
+        self.label7.setObjectName("Label")
+        self.label7.setGeometry(350, 400, 130, 90)
+        self.label7.setText("Final Label")
+        self.label7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+
+        # self.label6.setBackgroundRole("Blue")
+
+        font = QtGui.QFont('Times')
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setItalic(True)
+        font.setUnderline(True)
+        self.label7.setFont(font)
+
 
         # Push Button1
-        self.pushb1 = QtWidgets.QPushButton(self.dialog)
-        self.pushb1.setObjectName("Button1")
-        self.pushb1.setGeometry(70, 150, 100, 30)
-        self.pushb1.setText("Hello")
-
-        # Push Button2
-        self.pushb2 = QtWidgets.QPushButton(self.dialog)
-        self.pushb2.setObjectName("Button2")
-        self.pushb2.setGeometry(270, 150, 100, 30)
-        self.pushb2.setText("World")
+        #self.pushb1 = QtWidgets.QPushButton(self.dialog)
+        #self.pushb1.setObjectName("Button1")
+        #self.pushb1.setGeometry(70, 150, 100, 30)
+        #self.pushb1.setText("Hello")
 
 
         # Set Signal
-        self.pushb1.clicked.connect(self.Event1)
-        self.pushb2.clicked.connect(self.Event2)
-
+        #self.pushb1.clicked.connect(self.Event1)
         # Set Slot
         QtCore.QMetaObject.connectSlotsByName(self.dialog)
 
     # 5 Set Events
     def Event1(self):
-        self.lb_title.setText("Set Hello")
-    def Event2(self):
-        self.lb_title.setText("Set World")
+        self.label1.setText("Set Hello")
+
 
 
 # Execute Application

@@ -47,7 +47,7 @@ class AppForm:
         # Label 1
         self.label1.setObjectName("Label 1")
         self.label1.setEnabled(True)
-        self.label1.setGeometry(180, 130, 175, 40)
+        self.label1.setGeometry(180, 120, 175, 40)
         self.label1.setText("Hello Label 1")
         self.label1.setStyleSheet("background-color: transparent")
         self.label1.setToolTip('This is Label 1')
@@ -96,7 +96,7 @@ class AppForm:
 
         # Push Button
         self.pushb.setObjectName("Button")
-        self.pushb.setGeometry(220, 230, 100, 30)
+        self.pushb.setGeometry(220, 240, 100, 30)
         self.pushb.setText("Hello")
 
         # Set Signal
