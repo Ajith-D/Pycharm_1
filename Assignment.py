@@ -87,11 +87,12 @@ class ApplicationForm:
 
         self.label4.setEnabled(True)
         self.label4.setObjectName("Label")
-        self.label4.setGeometry(210, 200, 120, 20)
+        self.label4.setGeometry(210, 200, 125, 20)
         self.label4.setText("Label 3")
         self.label4.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeft)
         # Set QFrame Property
         self.label4.setFrameShape(QtWidgets.QFrame.Shape.Box)
+        colour = QtGui.QColor("Color : Blue")
 
         # self.label4.setBackgroundRole("Blue")
 
@@ -104,7 +105,7 @@ class ApplicationForm:
         # Label 5
         self.label5.setEnabled(True)
         self.label5.setObjectName("Label")
-        self.label5.setGeometry(210, 250, 120, 20)
+        self.label5.setGeometry(210, 250, 125, 20)
         self.label5.setText("Label 3")
         self.label5.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         # Set QFrame Property
@@ -121,7 +122,7 @@ class ApplicationForm:
         # Label 6
         self.label6.setEnabled(True)
         self.label6.setObjectName("Label")
-        self.label6.setGeometry(210, 300, 120, 20)
+        self.label6.setGeometry(210, 300, 125, 20)
         self.label6.setText("Label 3")
         self.label6.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
         # Set QFrame Property
