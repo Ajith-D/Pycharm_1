@@ -96,7 +96,7 @@ class AppForm:
 
         # Push Button
         self.pushb.setObjectName("Button")
-        self.pushb.setGeometry(220, 240, 100, 30)
+        self.pushb.setGeometry(205, 240, 120, 30)
         self.pushb.setText("Hello")
 
         # Set Signal
