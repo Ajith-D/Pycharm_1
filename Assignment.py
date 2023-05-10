@@ -16,6 +16,8 @@ class ApplicationForm:
         self.dialog.setWindowTitle("My Label Assignment")
         self.dialog.setMaximumSize(600, 500)
         self.dialog.setMinimumSize(400, 200)
+        self.dialog.setContentsMargins(70, 30, 70, 30)
+        #self.dialog.setLayout(QtWidgets.QLayout)
 
         Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
         self.dialog.setCursor(Cursor)
@@ -29,7 +31,6 @@ class ApplicationForm:
         self.label6 = None
         self.label7 = None
         self.label8 = None
-
 
     # 4 Set Widgets
     def widgets(self):
