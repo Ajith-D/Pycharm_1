@@ -20,13 +20,13 @@ class AppForm:
         #set ToolTip
         self.dialog.setToolTip('This is Main Window')
 
-        # Set Font Control
-        #font = QtGui.QFont('Times')
-        #font.setPointSize(18)
-        #font.setBold(True)
-        #font.setItalic(True)
-        #font.setUnderline(True)
-        #self.dialog.setFont(font)
+        # Set Font Control for Dialog
+        font = QtGui.QFont('Times')
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setUnderline(False)
+        self.dialog.setFont(font)
 
         #Set Cursor
         Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
@@ -49,7 +49,7 @@ class AppForm:
         self.label1.setEnabled(True)
         self.label1.setGeometry(180, 120, 175, 40)
         self.label1.setText("Hello Label 1")
-        self.label1.setStyleSheet("background-color: transparent")
+        self.label1.setStyleSheet("color: White; background-color: Black")
         self.label1.setToolTip('This is Label 1')
         self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
         self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -74,7 +74,7 @@ class AppForm:
         self.label2.setEnabled(True)
         self.label2.setGeometry(180, 180, 175, 40)
         self.label2.setText("Hello Label 2")
-        self.label2.setStyleSheet("background-color: transparent")
+        self.label2.setStyleSheet("color: White; background-color: Black")
         self.label2.setToolTip('This is Label 2')
         self.label2.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
         self.label2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -97,6 +97,7 @@ class AppForm:
         # Push Button
         self.pushb.setObjectName("Button")
         self.pushb.setGeometry(205, 240, 120, 30)
+        self.pushb.setStyleSheet("background-color: lightgrey ")
         self.pushb.setText("Hello")
 
         # Set Signal
