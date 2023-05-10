@@ -29,7 +29,7 @@ class AppForm:
         self.dialog.setFont(font)
 
         #Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
+        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         self.dialog.setCursor(Cursor)
 
         #Define Fields
@@ -54,6 +54,8 @@ class AppForm:
         self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
         self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label1.setMargin(1)
+        # Set Tool Tip for Label 1
+        self.label1.setToolTip('This is Label 1')
 
         #Set Font For Label 1
         font = QtGui.QFont('Times')
@@ -66,7 +68,7 @@ class AppForm:
         self.label1.setFrameShape(QtWidgets.QFrame.Shape.Box)
 
         # Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
         self.label1.setCursor(Cursor)
 
         # Label 2
@@ -79,6 +81,8 @@ class AppForm:
         self.label2.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
         self.label2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label2.setMargin(2)
+        # Set Tool Tip for Label 2
+        self.label2.setToolTip('This is Label 2')
 
         #Set Font For Label 2
         font = QtGui.QFont('Times')
@@ -91,7 +95,7 @@ class AppForm:
         self.label2.setFrameShape(QtWidgets.QFrame.Shape.Box)
 
         # Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
         self.label2.setCursor(Cursor)
 
         # Push Button
