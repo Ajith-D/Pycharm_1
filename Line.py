@@ -71,6 +71,7 @@ class AppForm:
         self.pushb = None
         self.out = None
 
+    # 4 Create Widgets
     def Widgets(self):
         self.title = QLabel(self.dialog)
         self.label1 = QLabel(self.dialog)
@@ -91,4 +92,49 @@ class AppForm:
 
         # For Line 1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
+
+        # For Label 2
+        self.label2.setGeometry(label2_x, label2_y, label2_width, label2_height)
+        self.label2.setText('Value B: ')
+
+        # For Line 2
+        self.line2.setGeometry(line2_x, line2_y, line2_width, line2_height)
+
+        # Set PushButton
+        self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
+        self.pushb.setText('ADD')
+
+        # Set OutPut
+        self.out.setGeometry(out_x, out_y, out_width, out_height)
+        self.out.setText('ANS: ')
+
+        # Set Signal
+        self.pushb.clicked.connect(self.Event)
+        # set Slot
+        QMetaObject.connectSlotsByName(self.dialog)
+
+
+    def Event(self):
+        x = self.line1.text()
+        y = self.line2.text()
+        add = float(x) + float(y)
+        self.out.setText(f'Ans: {str(add)}')
+
+    # 5 Execute Application
+    if __name__ == "__main__":
+        app = QApplication(sys.argv)
+        Form = QWidget()
+
+        # Give the form class
+        userI = AppForm(Form)
+
+        # Initialize the Widget
+        userI.Widgets()
+
+        # Show Form
+        Form.show()
+
+        # Close the Form
+        sys.exit(app.exec())
+
 
