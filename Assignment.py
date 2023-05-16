@@ -5,7 +5,6 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 
-
 # 2 Create One Class
 class ApplicationForm:
     # 3 Set Dialog
