@@ -115,8 +115,8 @@ class AppForm:
 
 # 4 Execute Application
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
+    app = QApplication(sys.argv)
+    Form = QWidget()
 
     # Give the form class
     userI = AppForm(Form)

@@ -1,7 +1,9 @@
 # 1 Import Libraries
 import sys
 
-from PyQt6 import QtWidgets, QtCore, QtGui
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 
 # 2 Set Constant Values
 # Dialog Geometry
@@ -11,7 +13,7 @@ dlg_height = 200
 # Title Geometry
 title_width = 200
 title_height = 20
-title_x = int(dlg_width / 2 - dlg_height / 2)
+title_x = int(dlg_width / 2 - title_width/ 2)
 title_y = 20
 
 # Value A Geometry
@@ -47,4 +49,46 @@ out_width = 100
 out_height = 30
 out_x = (pushb_x + pushb_width) + 20
 out_y = (label2_y + label2_height) + 20
+
+# 3 Create Class
+class AppForm:
+    def __init__(self, form):
+        #form = QtWidgets.QWidget()
+        self.dialog = form
+        self.dialog.setObjectName("My App")
+        self.dialog.setEnabled(True)
+        self.dialog.setGeometry(100, 200, dlg_width, dlg_height)
+        self.dialog.setFocusPolicy(Qt.FocusPolicy.TabFocus)
+        self.dialog.setWindowTitle("My Window")
+        self.dialog.setWindowOpacity(1.0)
+
+        # Define Fields
+        self.title = None
+        self.label1 = None
+        self.label2 = None
+        self.line1 = None
+        self.line2 = None
+        self.pushb = None
+        self.out = None
+
+    def Widgets(self):
+        self.title = QLabel(self.dialog)
+        self.label1 = QLabel(self.dialog)
+        self.label2 = QLabel(self.dialog)
+        self.line1 = QLineEdit(self.dialog)
+        self.line2 = QLineEdit(self.dialog)
+        self.pushb = QPushButton(self.dialog)
+        self.out = QLabel(self.dialog)
+
+        # For Title
+        self.title.setGeometry(title_x, title_y, title_width, title_height)
+        self.title.setText('ADDITION')
+        self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        # For Label 1
+        self.label1.setGeometry(label1_x, label1_y, label1_width, label1_height)
+        self.label1.setText('Value A: ')
+
+        # For Line 1
+        self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
 
