@@ -1,7 +1,9 @@
-# 1 Import Libraries
+#  Import Libraries
 import sys
 
-from PyQt6 import QtWidgets, QtCore, QtGui
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 
 # 1 Create Class
 class AppForm:
@@ -21,16 +23,12 @@ class AppForm:
         self.dialog.setToolTip('This is Main Window')
 
         # Set Font Control for Dialog
-        font = QtGui.QFont('Times')
+        font = QFont('Times')
         font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
         font.setUnderline(False)
         self.dialog.setFont(font)
-
-        #Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
-        self.dialog.setCursor(Cursor)
 
         #Define Fields
         self.label1 = None
@@ -40,9 +38,9 @@ class AppForm:
     # 2 Create Widget
     def Widgets(self):
         # 1 set QObject Properties
-        self.label1 = QtWidgets.QLabel(self.dialog)
-        self.label2 = QtWidgets.QLabel(self.dialog)
-        self.pushb = QtWidgets.QPushButton(self.dialog)
+        self.label1 = QLabel(self.dialog)
+        self.label2 = QLabel(self.dialog)
+        self.pushb = QPushButton(self.dialog)
 
         # Label 1
         self.label1.setObjectName("Label 1")
@@ -51,24 +49,24 @@ class AppForm:
         self.label1.setText("Hello Label 1")
         self.label1.setStyleSheet("color: White; background-color: Black")
         self.label1.setToolTip('This is Label 1')
-        self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
-        self.label1.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label1.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.label1.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label1.setMargin(1)
         # Set Tool Tip for Label 1
         self.label1.setToolTip('This is Label 1')
 
         #Set Font For Label 1
-        font = QtGui.QFont('Times')
+        font = QFont('Times')
         font.setPointSize(12)
         font.setBold(True)
         font.setItalic(True)
         self.label1.setFont(font)
 
         #Set QFrame Property
-        self.label1.setFrameShape(QtWidgets.QFrame.Shape.Box)
+        self.label1.setFrameShape(QFrame.Shape.Box)
 
         # Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
+        Cursor = QCursor(Qt.CursorShape.PointingHandCursor)
         self.label1.setCursor(Cursor)
 
         # Label 2
@@ -78,24 +76,24 @@ class AppForm:
         self.label2.setText("Hello Label 2")
         self.label2.setStyleSheet("color: White; background-color: Black")
         self.label2.setToolTip('This is Label 2')
-        self.label2.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
-        self.label2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label2.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.label2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label2.setMargin(2)
         # Set Tool Tip for Label 2
         self.label2.setToolTip('This is Label 2')
 
         #Set Font For Label 2
-        font = QtGui.QFont('Times')
+        font = QFont('Times')
         font.setPointSize(12)
         font.setBold(True)
         font.setItalic(True)
         self.label2.setFont(font)
 
         # Set QFrame Property
-        self.label2.setFrameShape(QtWidgets.QFrame.Shape.Box)
+        self.label2.setFrameShape(QFrame.Shape.Box)
 
         # Set Cursor
-        Cursor = QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor)
+        Cursor = QCursor(Qt.CursorShape.ArrowCursor)
         self.label2.setCursor(Cursor)
 
         # Push Button
@@ -107,7 +105,7 @@ class AppForm:
         # Set Signal
         self.pushb.clicked.connect(self.Event)
         # Set Slot
-        QtCore.QMetaObject.connectSlotsByName(self.dialog)
+        QMetaObject.connectSlotsByName(self.dialog)
 
 
     # 3 Set Events
