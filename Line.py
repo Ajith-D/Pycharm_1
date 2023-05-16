@@ -39,7 +39,7 @@ line2_x = (label2_x + label2_width) + 20
 line2_y = (line1_y + line1_height) + 20
 
 # Button Geometry
-pushb_width = 100
+pushb_width = 70
 pushb_height = 30
 pushb_x = 50
 pushb_y = (label2_y + label2_height) + 20
@@ -120,8 +120,7 @@ class AppForm:
         add = float(x) + float(y)
         self.out.setText(f'Ans: {str(add)}')
 
-        # 5 Execute Application
-
+ # 5 Execute Application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
