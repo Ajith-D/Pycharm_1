@@ -1,6 +1,5 @@
 # 1 Import Libraries
 import sys
-
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
@@ -8,7 +7,7 @@ from PyQt6.QtWidgets import *
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 400
-dlg_height = 300
+dlg_height = 280
 
 # Title Geometry
 title_width = 200
@@ -128,23 +127,25 @@ class AppForm:
 
         # For Label 1
         self.label1.setGeometry(label1_x, label1_y, label1_width, label1_height)
-        self.label1.setText('Value A: ')
+        self.label1.setText('VALUE A: ')
         font = QFont('Times')
         font.setBold(True)
         self.label1.setFont(font)
 
         # For Line 1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
+        self.line1.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # For Label 2
         self.label2.setGeometry(label2_x, label2_y, label2_width, label2_height)
-        self.label2.setText('Value B: ')
+        self.label2.setText('VALUE B: ')
         font = QFont('Times')
         font.setBold(True)
         self.label2.setFont(font)
 
         # For Line 2
         self.line2.setGeometry(line2_x, line2_y, line2_width, line2_height)
+        self.line2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Set PushButton 1
         self.pushb1.setGeometry(pushb1_x, pushb1_y, pushb1_width, pushb1_height)
