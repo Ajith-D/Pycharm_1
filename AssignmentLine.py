@@ -13,7 +13,7 @@ dlg_height = 300
 # Title Geometry
 title_width = 200
 title_height = 20
-title_x = int(dlg_width / 2 - title_width/ 2)
+title_x = int(dlg_width / 2 - title_width / 2)
 title_y = 20
 
 # Value A Geometry
@@ -40,32 +40,32 @@ line2_y = (line1_y + line1_height) + 20
 
 # Button Geometry
 pushb1_width = 80
-pushb1_height = 30
+pushb1_height = 20
 pushb1_x = 40
 pushb1_y = (label2_y + label2_height) + 20
 
 pushb2_width = 80
-pushb2_height = 30
+pushb2_height = 20
 pushb2_x = 160
 pushb2_y = (label1_y + label1_height) + 60
 
 pushb3_width = 80
-pushb3_height = 30
+pushb3_height = 20
 pushb3_x = 40
 pushb3_y = (label2_y + label2_height) + 60
 
 pushb4_width = 80
-pushb4_height = 30
+pushb4_height = 20
 pushb4_x = 160
 pushb4_y = (label1_y + label1_height) + 100
 
 pushb5_width = 80
-pushb5_height = 30
+pushb5_height = 20
 pushb5_x = 40
 pushb5_y = (label2_y + label2_height) + 100
 
 pushb6_width = 80
-pushb6_height = 30
+pushb6_height = 20
 pushb6_x = 160
 pushb6_y = (label1_y + label1_height) + 140
 
