@@ -52,7 +52,7 @@ out_y = (label2_y + label2_height) + 20
 
 # 3 Create Class
 class AppForm:
-    def __int__(self, form):
+    def __init__(self, form):
         # form = QtWidgets.QWidget()
         self.dialog = form
         self.dialog.setObjectName("My App")
@@ -70,6 +70,7 @@ class AppForm:
         self.line2 = None
         self.pushb = None
         self.out = None
+
 
     # 4 Create Widgets
     def Widgets(self):
@@ -121,21 +122,21 @@ class AppForm:
 
         # 5 Execute Application
 
-    if __name__ == "__main__":
-        app = QApplication(sys.argv)
-        Form = QWidget()
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    Form = QWidget()
 
-        # Give the form class
-        userI = AppForm(Form)
+    # Give the form class
+    userI = AppForm(Form)
 
-        # Initialize the Widget
-        userI.Widgets()
+    # Initialize the Widget
+    userI.Widgets()
 
-        # Show Form
-        Form.show()
+    # Show Form
+    Form.show()
 
-        # Close the Form
-        sys.exit(app.exec())
+    # Close the Form
+    sys.exit(app.exec())
 
 
 
