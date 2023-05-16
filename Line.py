@@ -52,8 +52,8 @@ out_y = (label2_y + label2_height) + 20
 
 # 3 Create Class
 class AppForm:
-    def __init__(self, form):
-        #form = QtWidgets.QWidget()
+    def __int__(self, form):
+        # form = QtWidgets.QWidget()
         self.dialog = form
         self.dialog.setObjectName("My App")
         self.dialog.setEnabled(True)
@@ -113,14 +113,14 @@ class AppForm:
         # set Slot
         QMetaObject.connectSlotsByName(self.dialog)
 
-
     def Event(self):
         x = self.line1.text()
         y = self.line2.text()
         add = float(x) + float(y)
         self.out.setText(f'Ans: {str(add)}')
 
-    # 5 Execute Application
+        # 5 Execute Application
+
     if __name__ == "__main__":
         app = QApplication(sys.argv)
         Form = QWidget()
@@ -136,5 +136,7 @@ class AppForm:
 
         # Close the Form
         sys.exit(app.exec())
+
+
 
 
