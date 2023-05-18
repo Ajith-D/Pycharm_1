@@ -39,7 +39,10 @@ pushb_x = int((dlg_width / 2) - (pushb_width / 2))
 pushb_y = (cal_y + cal_height) + 50
 
 # Output Geometry
-
+out_width = 400
+out_height = 50
+out_x = 50
+out_y = (pushb_y + pushb_height) + 20
 
 
 
