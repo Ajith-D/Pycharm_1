@@ -47,10 +47,29 @@ out_y = (pushb_y + pushb_height) + 20
 # 3 Create Class
 class AppForm:
     def __init__(self, form):
-        form = QWidget()
+        #form = QWidget()
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('Task Manager')
+
+
+# 5 Execute Application
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    Form = QWidget()
+
+    # Give the form class
+    userI = AppForm(Form)
+
+    # Initialize the Widget
+    userI.Widgets()
+
+    # Show Form
+    Form.show()
+
+    # Close the Form
+    sys.exit(app.exec())
+
 
 
 
