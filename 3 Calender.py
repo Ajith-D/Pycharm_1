@@ -44,5 +44,15 @@ out_height = 50
 out_x = 50
 out_y = (pushb_y + pushb_height) + 20
 
+# 3 Create Class
+class AppForm:
+    def __init__(self, form):
+        form = QWidget()
+        self.dialog = form
+        self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
+        self.dialog.setWindowTitle('Task Manager')
+
+
+
 
 
