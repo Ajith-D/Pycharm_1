@@ -12,14 +12,14 @@ dlg_height = 500
 # Title Geometry
 title_width = 200
 title_height = 20
-title_x = int((dlg_width / 2) - (title_width / 2))
+title_x = int((dlg_width / 2) - (title_width / 2)) + 40
 title_y = 20
 
 # Task Geometry
 task_width = 100
 task_height = 20
-task_x = 10
-task_y = title_y + 30
+task_x = 80
+task_y = title_y + 40
 
 line_width = 100
 line_height = 25
@@ -34,9 +34,9 @@ cal_y = line_y + 50
 
 # Button Geometry
 pushb_width = 80
-pushb_height = 20
+pushb_height = 40
 pushb_x = int((dlg_width / 2) - (pushb_width / 2))
-pushb_y = (cal_y + cal_height) + 50
+pushb_y = (cal_y + cal_height) + 10
 
 # Output Geometry
 out_width = 400
@@ -87,6 +87,7 @@ class AppForm:
 
         # Line
         self.line.setGeometry(line_x, line_y, line_width, line_height)
+        self.line.setStyleSheet('background-color: lightgrey')
 
         # Calender
         self.cal.setGeometry(cal_x, cal_y, cal_width, cal_height)
@@ -95,8 +96,9 @@ class AppForm:
 
         # PushButton
         self.pushb.setObjectName('Button')
-        self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_width)
+        self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
         self.pushb.setText('ADD TASK')
+        self.pushb.setStyleSheet('background-color : lightgrey')
 
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)
