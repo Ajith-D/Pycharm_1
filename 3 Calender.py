@@ -7,7 +7,7 @@ from PyQt6.QtWidgets import *
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 500
-dlg_height = 500
+dlg_height = 600
 
 # Title Geometry
 title_width = 200
@@ -43,6 +43,7 @@ out_width = 400
 out_height = 50
 out_x = 160
 out_y = (pushb_y + pushb_height) + 20
+
 
 # 3 Create Class
 class AppForm:
