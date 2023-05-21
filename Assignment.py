@@ -51,14 +51,12 @@ class ApplicationForm:
         self.label1.setObjectName("Label")
         self.label1.setGeometry(130, 20, 230, 30)
         self.label1.setText("Label")
-        #self.label1.set
-        self.label1.setAutoFillBackground(True)
         self.label1.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         font = QFont('Times')
         font.setPointSize(18)
         font.setBold(True)
-        font.setItalic(False)
+        font.setUnderline(True)
         self.label1.setFont(font)
 
         # Label 2
@@ -66,13 +64,12 @@ class ApplicationForm:
         self.label2.setObjectName("Label")
         self.label2.setGeometry(130, 50, 230, 30)
         self.label2.setText("Assignment")
-        self.label2.setAutoFillBackground(True)
         self.label2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         font = QFont('Times')
         font.setPointSize(18)
         font.setBold(True)
-        font.setItalic(False)
+        font.setUnderline(True)
         self.label2.setFont(font)
 
         # Label 3
