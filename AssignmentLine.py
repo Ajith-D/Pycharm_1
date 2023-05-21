@@ -6,8 +6,8 @@ from PyQt6.QtWidgets import *
 
 # 2 Set Constant Values
 # Dialog Geometry
-dlg_width = 400
-dlg_height = 280
+dlg_width = 450
+dlg_height = 300
 
 # Title Geometry
 title_width = 200
@@ -40,36 +40,36 @@ line2_y = (line1_y + line1_height) + 20
 # Button Geometry
 pushb1_width = 80
 pushb1_height = 20
-pushb1_x = 40
+pushb1_x = 50
 pushb1_y = (label2_y + label2_height) + 20
 
 pushb2_width = 80
 pushb2_height = 20
-pushb2_x = 160
+pushb2_x = 180
 pushb2_y = (label1_y + label1_height) + 60
 
 pushb3_width = 80
 pushb3_height = 20
-pushb3_x = 40
+pushb3_x = 50
 pushb3_y = (label2_y + label2_height) + 60
 
 pushb4_width = 80
 pushb4_height = 20
-pushb4_x = 160
+pushb4_x = 180
 pushb4_y = (label1_y + label1_height) + 100
 
 pushb5_width = 80
 pushb5_height = 20
-pushb5_x = 40
+pushb5_x = 50
 pushb5_y = (label2_y + label2_height) + 100
 
 pushb6_width = 80
 pushb6_height = 20
-pushb6_x = 160
+pushb6_x = 180
 pushb6_y = (label1_y + label1_height) + 140
 
 # Output Geometry
-out_width = 100
+out_width = 120
 out_height = 20
 out_x = (pushb1_x + pushb1_width) + 170
 out_y = (label2_y + label2_height) + 20
@@ -82,7 +82,7 @@ class AppForm:
         self.dialog.setObjectName("My App")
         self.dialog.setEnabled(True)
         self.dialog.setGeometry(130, 270, dlg_width, dlg_height)
-        self.dialog.setFocusPolicy(Qt.FocusPolicy.TabFocus)
+        #self.dialog.setFocusPolicy(Qt.FocusPolicy.TabFocus)
         self.dialog.setWindowTitle("My Window")
         self.dialog.setWindowOpacity(1.0)
 
@@ -123,6 +123,7 @@ class AppForm:
         font = QFont('Times')
         font.setPointSize(16)
         font.setBold(True)
+        font.setUnderline(True)
         self.title.setFont(font)
 
         # For Label 1
