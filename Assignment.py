@@ -83,7 +83,6 @@ class ApplicationForm:
         font = QFont('Times')
         font.setPointSize(12)
         font.setBold(True)
-        font.setItalic(False)
         self.label3.setFont(font)
 
         # Label 4
@@ -97,7 +96,6 @@ class ApplicationForm:
         font = QFont('Times')
         font.setPointSize(12)
         font.setBold(True)
-        font.setItalic(False)
         self.label4.setFont(font)
 
         # Label 5
@@ -113,7 +111,6 @@ class ApplicationForm:
         font = QFont('Times')
         font.setPointSize(11)
         font.setBold(True)
-        font.setItalic(False)
         self.label5.setFont(font)
 
         # Label 6
@@ -129,7 +126,6 @@ class ApplicationForm:
         font = QFont('Times')
         font.setPointSize(11)
         font.setBold(True)
-        font.setItalic(False)
         self.label6.setFont(font)
 
         # Label 7
@@ -145,7 +141,6 @@ class ApplicationForm:
         font = QFont('Times')
         font.setPointSize(11)
         font.setBold(True)
-        font.setItalic(False)
         self.label7.setFont(font)
 
         # Label 8
@@ -162,20 +157,8 @@ class ApplicationForm:
         font.setUnderline(True)
         self.label8.setFont(font)
 
-        # Push Button1
-        #self.pushb1 = QtWidgets.QPushButton(self.dialog)
-        #self.pushb1.setObjectName("Button1")
-        #self.pushb1.setGeometry(70, 150, 100, 30)
-        #self.pushb1.setText("Hello")
-
-        # Set Signal
-        #self.pushb1.clicked.connect(self.Event1)
         # Set Slot
         QMetaObject.connectSlotsByName(self.dialog)
-
-    # 5 Set Events
-    #def Event1(self):
-        #self.label1.setText("Set Hello")
 
 
 # Execute Application
