@@ -130,9 +130,3 @@ if __name__ == "__main__":
 
     # Close the Form
     sys.exit(app.exec())
-
-
-
-
-
-
