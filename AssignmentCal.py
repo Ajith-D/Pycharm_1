@@ -51,19 +51,20 @@ class AppForm:
     def __init__(self, form):
         #form = QWidget()
         self.dialog = form
+        self.dialog.setWindowTitle('My Claculator')
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
-        self.dialog.setWindowTitle('Task Manager')
 
-        # Define Field
-        self.title = None
-        self.task = None
-        self.line = None
-        self.cal = None
-        self.pushb = None
+        # Define Fields
         self.out = None
+        self.pushb = None
+        self.cal = None
+        self.line = None
+        self.task = None
+        self.title = None
 
-     # 4 Create Widgets
+
     def Widgets(self):
+
         self.title = QLabel(self.dialog)
         self.task = QLabel(self.dialog)
         self.line = QLineEdit(self.dialog)
@@ -72,24 +73,21 @@ class AppForm:
         self.out = QLabel(self.dialog)
 
         # Title
-        self.title.setObjectName('Task')
         self.title.setText('Task Manager')
         self.title.setGeometry(title_x, title_y, title_width, title_height)
         font = QFont('Times')
-        font.setPointSize(14)
         font.setBold(True)
         font.setUnderline(True)
-        font.setItalic(True)
+        font.setPointSize(18)
         self.title.setFont(font)
 
         # Task
         self.task.setGeometry(task_x, task_y, task_width, task_height)
         self.task.setText('Task: ')
-        self.task.setAlignment(Qt.AlignmentFlag.AlignRight)
 
         # Line
         self.line.setGeometry(line_x, line_y, line_width, line_height)
-        self.line.setStyleSheet('background-color: lightgrey')
+        self.line.setStyleSheet('Background-color : lightgrey')
 
         # Calender
         self.cal.setGeometry(cal_x, cal_y, cal_width, cal_height)
@@ -97,19 +95,20 @@ class AppForm:
         self.cal.setMinimumDate(QDate.currentDate())
         self.cal.setStyleSheet('background-color : lightblue')
 
-        # PushButton
-        self.pushb.setObjectName('Button')
+        # Push Button
         self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
         self.pushb.setText('ADD TASK')
-        self.pushb.setStyleSheet('background-color : lightgrey')
+        self.pushb.setStyleSheet('color : white; background-color : black')
         font = QFont('Times')
         font.setBold(True)
+        font.setPointSize(12)
         self.pushb.setFont(font)
 
         # Output
-        self.out.setGeometry(out_x, out_y, out_width, out_height)
+        self.out.setStyleSheet('background-color - ligthgrey')
         self.out.setFrameShape(QFrame.Shape.Box)
         self.out.setAlignment(Qt.AlignmentFlag.AlignAbsolute)
+        self.out.setGeometry(out_x, out_y, out_width, out_height)
 
         # Set Signal
         self.pushb.clicked.connect(self.Events)
@@ -118,24 +117,23 @@ class AppForm:
     def Events(self):
         global Tasks
         Task = self.line.text()
-        appointment = self.cal.selectedDate().toString("yyyy-MM-dd")
+        appointment = self.cal.selectedDate().toString('yyyy-mm-dd')
         Tasks = Tasks + f'\n {Task} on {appointment}'
         self.out.setText(Tasks)
 
-
-# 5 Execute Application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
 
-    # Give the form class
-    userI = AppForm(Form)
+    # Give the Form class
+    user = AppForm(Form)
 
     # Initialize the Widget
-    userI.Widgets()
+    user.Widgets()
 
-    # Show Form
+    # Form Show
     Form.show()
 
-    # Close the Form
+    # Close
     sys.exit(app.exec())
+
