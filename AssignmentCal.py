@@ -62,7 +62,7 @@ class AppForm:
         self.task = None
         self.title = None
 
-
+    # 4 Set Widgets
     def Widgets(self):
 
         self.title = QLabel(self.dialog)
@@ -114,6 +114,7 @@ class AppForm:
         self.pushb.clicked.connect(self.Events)
         QMetaObject.connectSlotsByName(self.dialog)
 
+    # 5 Set Event
     def Events(self):
         global Tasks
         Task = self.line.text()
@@ -121,6 +122,7 @@ class AppForm:
         Tasks = Tasks + f'\n {Task} on {appointment}'
         self.out.setText(Tasks)
 
+# 6 Execute Application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
