@@ -63,6 +63,11 @@ out_height = 50
 out_x = int((dlg_width / 2) - (out_width / 2))
 out_y = (pushb_y + pushb_height) + 20
 
+class AppForm:
+    def __init__(self, form):
+        form = QWidget()
+        self.dialog = form
+        self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
 
 
 
