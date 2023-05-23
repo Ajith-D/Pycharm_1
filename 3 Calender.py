@@ -88,7 +88,7 @@ class AppForm:
 
         # Line
         self.line.setGeometry(line_x, line_y, line_width, line_height)
-        self.line.setStyleSheet('background-color: lightgrey')
+        self.line.setStyleSheet('background-color: white')
 
         # Calender
         self.cal.setGeometry(cal_x, cal_y, cal_width, cal_height)
@@ -99,7 +99,7 @@ class AppForm:
         self.pushb.setObjectName('Button')
         self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
         self.pushb.setText('ADD TASK')
-        self.pushb.setStyleSheet('background-color : lightgrey')
+        self.pushb.setStyleSheet('color: White; background-color : Black')
 
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)

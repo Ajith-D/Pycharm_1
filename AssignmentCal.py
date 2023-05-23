@@ -79,16 +79,17 @@ class AppForm:
         font = QFont('Times')
         font.setBold(True)
         font.setUnderline(True)
-        font.setPointSize(18)
+        font.setPointSize(16)
         self.title.setFont(font)
 
         # Task
         self.task.setGeometry(task_x, task_y, task_width, task_height)
         self.task.setText('Task: ')
+        self.task.setAlignment(Qt.AlignmentFlag.AlignRight)
 
         # Line
         self.line.setGeometry(line_x, line_y, line_width, line_height)
-        self.line.setStyleSheet('Background-color : lightgrey')
+        self.line.setStyleSheet('Background-color : white')
 
         # Calender
         self.cal.setGeometry(cal_x, cal_y, cal_width, cal_height)
@@ -109,6 +110,7 @@ class AppForm:
         self.out.setFrameShape(QFrame.Shape.Box)
         self.out.setAlignment(Qt.AlignmentFlag.AlignAbsolute)
         self.out.setGeometry(out_x, out_y, out_width, out_height)
+        self.out.setStyleSheet('Background-color : white')
 
         # Set Signal
         self.pushb.clicked.connect(self.Events)
