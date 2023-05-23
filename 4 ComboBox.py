@@ -69,6 +69,7 @@ class AppForm:
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('Sign-up Form')
+        self.dialog.setStyleSheet('background-color: lightgrey')
 
         self.title = None
         self.name = None
@@ -104,7 +105,7 @@ class AppForm:
         # Line1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
         self.line1.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line1.setStyleSheet('Background-color : lightgrey')
+        self.line1.setStyleSheet('Background-color : white')
 
         # Age
         self.age.setText('AGE: ')
@@ -114,7 +115,7 @@ class AppForm:
         # Line 2
         self.line2.setGeometry(line2_x, line2_y, line2_width, line2_height)
         self.line2.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line2.setStyleSheet('Background-color : lightgrey')
+        self.line2.setStyleSheet('Background-color : white')
 
         # Gender
         self.gen.setGeometry(gen_x, gen_y, gen_width, gen_height)
@@ -130,6 +131,7 @@ class AppForm:
         # Push Button
         self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
         self.pushb.setText('SIGN UP')
+        self.pushb.setStyleSheet('background-color: white')
 
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)

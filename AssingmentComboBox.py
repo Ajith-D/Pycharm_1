@@ -145,21 +145,22 @@ pushb_y = com10_y + com10_height + 30
 out_width = 220
 out_height = 320
 out_x = (com2_x + com2_width) + 40
-out_y = 95
+out_y = 90
 
 # Label 11 Geometry
 lb11_width = 135
 lb11_height = 20
-lb11_x = (title_x + title_width) + 40
+lb11_x = (title_x + title_width) + 50
 lb11_y = 60
 
 
 class AppForm:
     def __init__(self, form):
-        # form = QWidget()
+        #form = QWidget()
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('MY SQUAD-2023')
+        self.dialog.setStyleSheet('background-color : grey')
 
         self.title = None
         self.lb1 = None
@@ -215,7 +216,7 @@ class AppForm:
         # Title
         self.title.setGeometry(title_x, title_y, title_width, title_height)
         self.title.setText('WORLD CUP SQUAD-2023')
-        self.title.setStyleSheet('color : blue')
+        self.title.setStyleSheet('color : lightgreen')
         font = QFont('Times')
         font.setBold(True)
         font.setUnderline(True)
@@ -459,7 +460,7 @@ class AppForm:
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)
         self.out.setAlignment(Qt.AlignmentFlag.AlignAbsolute)
-        self.out.setStyleSheet('background-color : lightgrey')
+        self.out.setStyleSheet('background-color: lightgrey')
         self.out.setFrameShape(QFrame.Shape.WinPanel)
 
         # Set Signal and slot

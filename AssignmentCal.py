@@ -53,6 +53,7 @@ class AppForm:
         self.dialog = form
         self.dialog.setWindowTitle('My Claculator')
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
+        self.dialog.setStyleSheet('background-color : lightgrey')
 
         # Define Fields
         self.out = None

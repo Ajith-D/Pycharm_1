@@ -82,7 +82,7 @@ class AppForm:
         self.dialog.setObjectName("My App")
         self.dialog.setEnabled(True)
         self.dialog.setGeometry(130, 270, dlg_width, dlg_height)
-        #self.dialog.setFocusPolicy(Qt.FocusPolicy.TabFocus)
+        self.dialog.setStyleSheet('background-color : lightgrey')
         self.dialog.setWindowTitle("My Window")
         self.dialog.setWindowOpacity(1.0)
 
@@ -136,6 +136,7 @@ class AppForm:
         # For Line 1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
         self.line1.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.line1.setStyleSheet('background-color: white')
 
         # For Label 2
         self.label2.setGeometry(label2_x, label2_y, label2_width, label2_height)
@@ -147,6 +148,7 @@ class AppForm:
         # For Line 2
         self.line2.setGeometry(line2_x, line2_y, line2_width, line2_height)
         self.line2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.line2.setStyleSheet('background-color: white')
 
         # Set PushButton 1
         self.pushb1.setGeometry(pushb1_x, pushb1_y, pushb1_width, pushb1_height)
@@ -181,9 +183,8 @@ class AppForm:
         # Set OutPut
         self.out.setGeometry(out_x, out_y, out_width, out_height)
         self.out.setText('ANS: ')
+        self.out.setStyleSheet('background-color: white')
         self.out.setFrameShape(QFrame.Shape.Box)
-        self.out.setStyleSheet("background-color: lightGrey")
-
 
         # Set Signal
         self.pushb1.clicked.connect(self.Event1)
