@@ -7,7 +7,7 @@ from PyQt6.QtWidgets import *
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 500
-dlg_height = 650
+dlg_height = 400
 
 # Title Geometry
 title_width = 150
@@ -140,13 +140,13 @@ class AppForm:
         QMetaObject.connectSlotsByName(self.dialog)
 
     def Events(self):
-        if self.gen.currentText() == 'MALE':
+        if self.com.currentText() == 'MALE':
             self.out.setText(f'''Welcome Sir!\n{self.line1.text()}
-            Successfully Signed Up''')
+        Successfully Signed Up''')
 
         else:
             self.out.setText(f'''Welcome Madam!\n{self.line1.text()}
-            Successfully Signed Up''')
+        Successfully Signed Up''')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
