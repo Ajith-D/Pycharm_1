@@ -21,11 +21,11 @@ lb1_height = 20
 lb1_x = 50
 lb1_y = 70
 
-# Line 1 Geometry
-line1_width = 100
-line1_height = 20
-line1_x = (lb1_x + lb1_width) + 10
-line1_y = 65
+# Box 1 Geometry
+com1_width = 100
+com1_height = 20
+com1_x = (lb1_x + lb1_width) + 10
+com1_y = 65
 
 # Label 2 Geometry
 lb2_width = 135
@@ -33,11 +33,11 @@ lb2_height = 20
 lb2_x = 50
 lb2_y = (lb1_y + lb1_height) + 10
 
-# Line 2 Geometry
-line2_width = 100
-line2_height = 20
-line2_x = (lb2_x + lb2_width) + 10
-line2_y = lb2_y - 3
+# Box 2 Geometry
+com2_width = 100
+com2_height = 20
+com2_x = (lb2_x + lb2_width) + 10
+com2_y = lb2_y - 3
 
 # Label 3 Geometry
 lb3_width = 135
@@ -45,11 +45,11 @@ lb3_height = 20
 lb3_x = 50
 lb3_y = (lb2_y + lb2_height) + 10
 
-# Line 3 Geometry
-line3_width = 100
-line3_height = 20
-line3_x = (lb3_x + lb3_width) + 10
-line3_y = lb3_y - 3
+# Box 3 Geometry
+com3_width = 100
+com3_height = 20
+com3_x = (lb3_x + lb3_width) + 10
+com3_y = lb3_y - 3
 
 # Label 4 Geometry
 lb4_width = 135
@@ -57,11 +57,11 @@ lb4_height = 20
 lb4_x = 50
 lb4_y = (lb3_y + lb3_height) + 10
 
-# Line 4 Geometry
-line4_width = 100
-line4_height = 20
-line4_x = (lb4_x + lb4_width) + 10
-line4_y = lb4_y - 3
+# Box 4 Geometry
+com4_width = 100
+com4_height = 20
+com4_x = (lb4_x + lb4_width) + 10
+com4_y = lb4_y - 3
 
 # Label 5 Geometry
 lb5_width = 135
@@ -69,11 +69,11 @@ lb5_height = 20
 lb5_x = 50
 lb5_y = (lb4_y + lb4_height) + 10
 
-# Line 5 Geometry
-line5_width = 100
-line5_height = 20
-line5_x = (lb5_x + lb5_width) + 10
-line5_y = lb5_y - 3
+# Box 5 Geometry
+com5_width = 100
+com5_height = 20
+com5_x = (lb5_x + lb5_width) + 10
+com5_y = lb5_y - 3
 
 # Label 6 Geometry
 lb6_width = 135
@@ -81,10 +81,10 @@ lb6_height = 20
 lb6_x = 50
 lb6_y = (lb5_y + lb5_height) + 10
 
-# Line 6 Geometry
-line6_width = 100
-line6_height = 20
-line6_x = (lb6_x + lb6_width) + 10
+# Box 6 Geometry
+com6_width = 100
+com6_height = 20
+com6_x = (lb6_x + lb6_width) + 10
 line6_y = lb6_y - 3
 
 # Label 7 Geometry

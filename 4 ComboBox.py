@@ -47,8 +47,8 @@ gen_y = (age_y + age_height) + 20
 
 # ComboBox Geometry
 combo_width = 110
-combo_height = 35
-combo_x = gen_x + gen_width + 5
+combo_height = 30
+combo_x = gen_x + gen_width + 10
 combo_y = (line2_y + line2_height) + 10
 
 # PushButton Geometry
