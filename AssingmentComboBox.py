@@ -142,10 +142,16 @@ pushb_x = com10_x - 100
 pushb_y = com10_y + com10_height + 30
 
 # Output Geometry
-out_width = 200
-out_height = 300
-out_x = (com1_x + com1_width) + 60
-out_y = 65
+out_width = 220
+out_height = 320
+out_x = (com2_x + com2_width) + 40
+out_y = 95
+
+# Label 11 Geometry
+lb11_width = 135
+lb11_height = 20
+lb11_x = (title_x + title_width) + 40
+lb11_y = 60
 
 
 class AppForm:
@@ -166,6 +172,7 @@ class AppForm:
         self.lb8 = None
         self.lb9 = None
         self.lb10 = None
+        self.lb11 = None
         self.com1 = None
         self.com2 = None
         self.com3 = None
@@ -191,6 +198,7 @@ class AppForm:
         self.lb8 = QLabel(self.dialog)
         self.lb9 = QLabel(self.dialog)
         self.lb10 = QLabel(self.dialog)
+        self.lb11 = QLabel(self.dialog)
         self.com1 = QComboBox(self.dialog)
         self.com2 = QComboBox(self.dialog)
         self.com3 = QComboBox(self.dialog)
@@ -203,7 +211,6 @@ class AppForm:
         self.com10 = QComboBox(self.dialog)
         self.pushb = QPushButton(self.dialog)
         self.out = QLabel(self.dialog)
-
 
         # Title
         self.title.setGeometry(title_x, title_y, title_width, title_height)
@@ -435,6 +442,15 @@ class AppForm:
         self.com10.addItem('Bumrah')
         self.com10.addItem('Shami')
 
+        # Label11
+        self.lb11.setGeometry(lb11_x, lb11_y, lb11_width, lb11_height)
+        self.lb11.setText('SELECTED TEAM')
+        self.lb11.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        font = QFont('Times')
+        font.setBold(True)
+        font.setPointSize(12)
+        self.lb11.setFont(font)
+
         # Push Button
         self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
         self.pushb.setText('ADD PLAYER')
@@ -443,64 +459,18 @@ class AppForm:
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)
         self.out.setAlignment(Qt.AlignmentFlag.AlignAbsolute)
-        self.out.setStyleSheet('background-color - ligthgrey')
-        self.out.setFrameShape(QFrame.Shape.Box)
+        self.out.setStyleSheet('background-color : lightgrey')
+        self.out.setFrameShape(QFrame.Shape.WinPanel)
 
         # Set Signal and slot
         self.pushb.clicked.connect(self.Events)
         QMetaObject.connectSlotsByName(self.dialog)
 
     def Events(self):
-        if self.com1.currentText() == 'Rohit Sharma'.upper():
-            self.out.setText(f'1. {self.com1.currentText()} - Top Order Batsman')
-        else:
-            self.out.setText('1. No Player Selected')
-
-        if self.com2.currentText() == 'Subham Gill'.upper():
-            self.out.setText(f'2. {self.com2.text()} - Top Order Batsman')
-        else:
-            self.out.setText('2. No Player Selected')
-
-        if self.com3.currentText() == 'Virat Kholi'.upper():
-            self.out.setText(f'3. {self.com3.text()} - Top Order Batsman')
-        else:
-            self.out.setText('3. No Player Selected')
-
-        if self.com4.currentText() == 'Sanju Samson'.upper():
-            self.out.setText(f'4. {self.com4.text()} - Middle Order Batsman')
-        else:
-            self.out.setText('4. No Player Selected')
-
-        if self.com5.currentText() == 'Jadeja'.upper():
-            self.out.setText(f'5. {self.com5.text()} - All Rounder')
-        else:
-            self.out.setText('5. No Player Selected')
-
-        if self.com6.currentText() == 'Hardik Pandya'.upper():
-            self.out.setText(f'6. {self.com6.text()} - All Rounder')
-        else:
-            self.out.setText('6. No Player Selected')
-
-        if self.com7.currentText() == 'Axar Patel'.upper():
-            self.out.setText(f'7. {self.com6.text()} - All Rounder')
-        else:
-            self.out.setText('7. No Player Selected')
-
-        if self.com8.currentText() == 'Siraj'.upper():
-            self.out.setText(f'8. {self.com8.text()} - Bowler')
-        else:
-            self.out.setText('8. No Player Selected')
-
-        if self.com9.currentText() == 'Bumrah'.upper():
-            self.out.setText(f'9. {self.com9.text()} - Bowler')
-        else:
-            self.out.setText('9. No Player Selected')
-
-        if self.com10.currentText() == 'Shami'.upper():
-            self.out.setText(f'10. {self.com10.text()} - Bowler')
-        else:
-            self.out.setText('10. No Player Selected')
-
+        self.out.setText(f'''1.{self.com1.currentText()}-Top Order Batsmen\n\n2.{self.com2.currentText()}-Top Order Batsmen
+    \n3.{self.com3.currentText()}-Top Order Batsmen\n\n4.{self.com4.currentText()}-Middle Order Batsmen
+    \n5.{self.com5.currentText()}-All rounder\n\n6.{self.com6.currentText()}All rounder\n\n7.{self.com7.currentText()}-All rounder
+    \n8.{self.com8.currentText()}-Bowler\n\n9.{self.com9.currentText()}-Bowler\n\n10.{self.com10.currentText()}-Bowler''')
 
 
 if __name__ == "__main__":
