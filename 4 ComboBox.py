@@ -125,6 +125,7 @@ class AppForm:
         # Combo Box
         self.com.setGeometry(combo_x, combo_y, combo_width, combo_height)
         self.com.setObjectName('COMBO BOX')
+        self.com.setStyleSheet('background-color : white')
         self.com.addItem('MALE')
         self.com.addItem('FEMALE')
 
@@ -143,11 +144,11 @@ class AppForm:
 
     def Events(self):
         if self.com.currentText() == 'Male'.upper():
-            self.out.setText(f'''Welcome Sir!\n{self.line1.text()}
+            self.out.setText(f'''     Welcome Sir!\n{self.line1.text()}
         Successfully Signed Up''')
 
         else:
-            self.out.setText(f'''Welcome Madam!\n{self.line1.text()}
+            self.out.setText(f'''     Welcome Madam!\n{self.line1.text()}
         Successfully Signed Up''')
 
 if __name__ == "__main__":

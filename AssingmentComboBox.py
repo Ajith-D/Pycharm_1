@@ -220,7 +220,7 @@ class AppForm:
         font = QFont('Times')
         font.setBold(True)
         font.setUnderline(True)
-        font.setPointSize(12)
+        font.setPointSize(11)
         self.title.setFont(font)
 
         # Label1
@@ -447,9 +447,10 @@ class AppForm:
         self.lb11.setGeometry(lb11_x, lb11_y, lb11_width, lb11_height)
         self.lb11.setText('SELECTED TEAM')
         self.lb11.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.lb11.setStyleSheet('color : lightgreen')
         font = QFont('Times')
         font.setBold(True)
-        font.setPointSize(12)
+        font.setPointSize(10)
         self.lb11.setFont(font)
 
         # Push Button
@@ -459,7 +460,7 @@ class AppForm:
 
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)
-        self.out.setAlignment(Qt.AlignmentFlag.AlignAbsolute)
+        self.out.setAlignment(Qt.AlignmentFlag.AlignVCenter)
         self.out.setStyleSheet('background-color: lightgrey')
         self.out.setFrameShape(QFrame.Shape.WinPanel)
 
