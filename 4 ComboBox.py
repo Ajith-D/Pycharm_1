@@ -22,7 +22,7 @@ name_x = 50
 name_y = 70
 
 # Line 1 Geometry
-line1_width = 200
+line1_width = 100
 line1_height = 20
 line1_x = (name_x + name_width) + 10
 line1_y = 70
@@ -43,7 +43,7 @@ line2_y = line1_y + line1_height + 10
 gen_width = 100
 gen_height = 20
 gen_x = 50
-gen_y = (age_y + age_height) + 10
+gen_y = (age_y + age_height) + 20
 
 # ComboBox Geometry
 combo_width = 110
@@ -99,7 +99,7 @@ class AppForm:
         # Name
         self.name.setGeometry(name_x, name_y, name_width, name_height)
         self.name.setText('NAME: ')
-        self.name.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.name.setAlignment(Qt.AlignmentFlag.AlignRight)
 
         # Line1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
@@ -109,7 +109,7 @@ class AppForm:
         # Age
         self.age.setText('AGE: ')
         self.age.setGeometry(age_x, age_y, age_width, age_height)
-        self.age.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.age.setAlignment(Qt.AlignmentFlag.AlignRight)
 
         # Line 2
         self.line2.setGeometry(line2_x, line2_y, line2_width, line2_height)
@@ -130,7 +130,6 @@ class AppForm:
         # Push Button
         self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
         self.pushb.setText('SIGN UP')
-        self.pushb.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)
@@ -149,8 +148,7 @@ class AppForm:
             self.out.setText(f'''Welcome Madam!\n{self.line1.text()}
             Successfully Signed Up''')
 
-
-if __name__ == "__main_":
+if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
 
