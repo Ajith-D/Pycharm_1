@@ -140,7 +140,7 @@ class AppForm:
         QMetaObject.connectSlotsByName(self.dialog)
 
     def Events(self):
-        if self.com.currentText() == 'MALE':
+        if self.com.currentText() == 'Male'.upper():
             self.out.setText(f'''Welcome Sir!\n{self.line1.text()}
         Successfully Signed Up''')
 

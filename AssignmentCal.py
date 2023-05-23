@@ -105,7 +105,6 @@ class AppForm:
         self.pushb.setFont(font)
 
         # Output
-        self.out.setStyleSheet('background-color - ligthgrey')
         self.out.setFrameShape(QFrame.Shape.Box)
         self.out.setAlignment(Qt.AlignmentFlag.AlignAbsolute)
         self.out.setGeometry(out_x, out_y, out_width, out_height)

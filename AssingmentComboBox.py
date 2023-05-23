@@ -85,7 +85,7 @@ lb6_y = (lb5_y + lb5_height) + 10
 com6_width = 100
 com6_height = 20
 com6_x = (lb6_x + lb6_width) + 10
-line6_y = lb6_y - 3
+com6_y = lb6_y - 3
 
 # Label 7 Geometry
 lb7_width = 135
@@ -93,11 +93,11 @@ lb7_height = 20
 lb7_x = 50
 lb7_y = (lb6_y + lb6_height) + 10
 
-# Line 7 Geometry
-line7_width = 100
-line7_height = 20
-line7_x = (lb7_x + lb7_width) + 10
-line7_y = lb7_y - 3
+# Box 7 Geometry
+com7_width = 100
+com7_height = 20
+com7_x = (lb7_x + lb7_width) + 10
+com7_y = lb7_y - 3
 
 # Label 8 Geometry
 lb8_width = 135
@@ -105,11 +105,11 @@ lb8_height = 20
 lb8_x = 50
 lb8_y = (lb7_y + lb7_height) + 10
 
-# Line 8 Geometry
-line8_width = 100
-line8_height = 20
-line8_x = (lb8_x + lb8_width) + 10
-line8_y = lb8_y - 3
+# Box 8 Geometry
+com8_width = 100
+com8_height = 20
+com8_x = (lb8_x + lb8_width) + 10
+com8_y = lb8_y - 3
 
 # Label 9 Geometry
 lb9_width = 135
@@ -117,11 +117,11 @@ lb9_height = 20
 lb9_x = 50
 lb9_y = (lb8_y + lb8_height) + 10
 
-# Line 9 Geometry
-line9_width = 100
-line9_height = 20
-line9_x = (lb9_x + lb9_width) + 10
-line9_y = lb9_y - 3
+# Box 9 Geometry
+com9_width = 100
+com9_height = 20
+com9_x = (lb9_x + lb9_width) + 10
+com9_y = lb9_y - 3
 
 # Label 10 Geometry
 lb10_width = 135
@@ -129,11 +129,24 @@ lb10_height = 20
 lb10_x = 50
 lb10_y = (lb9_y + lb9_height) + 10
 
-# Line 10 Geometry
-line10_width = 100
-line10_height = 20
-line10_x = (lb10_x + lb10_width) + 10
-line10_y = lb10_y - 3
+# Box 10 Geometry
+com10_width = 100
+com10_height = 20
+com10_x = (lb10_x + lb10_width) + 10
+com10_y = lb10_y - 3
+
+# PushButton Geometry
+pushb_width = 200
+pushb_height = 30
+pushb_x = com10_x - 100
+pushb_y = com10_y + com10_height + 30
+
+# Output Geometry
+out_width = 200
+out_height = 300
+out_x = (com1_x + com1_width) + 60
+out_y = 65
+
 
 class AppForm:
     def __init__(self, form):
@@ -153,16 +166,18 @@ class AppForm:
         self.lb8 = None
         self.lb9 = None
         self.lb10 = None
-        self.line1 = None
-        self.line2 = None
-        self.line3 = None
-        self.line4 = None
-        self.line5 = None
-        self.line6 = None
-        self.line7 = None
-        self.line8 = None
-        self.line9 = None
-        self.line10 = None
+        self.com1 = None
+        self.com2 = None
+        self.com3 = None
+        self.com4 = None
+        self.com5 = None
+        self.com6 = None
+        self.com7 = None
+        self.com8 = None
+        self.com9 = None
+        self.com10 = None
+        self.pushb = None
+        self.out = None
 
     def Widgets(self):
         self.title = QLabel(self.dialog)
@@ -176,16 +191,18 @@ class AppForm:
         self.lb8 = QLabel(self.dialog)
         self.lb9 = QLabel(self.dialog)
         self.lb10 = QLabel(self.dialog)
-        self.line1 = QLineEdit(self.dialog)
-        self.line2 = QLineEdit(self.dialog)
-        self.line3 = QLineEdit(self.dialog)
-        self.line4 = QLineEdit(self.dialog)
-        self.line5 = QLineEdit(self.dialog)
-        self.line6 = QLineEdit(self.dialog)
-        self.line7 = QLineEdit(self.dialog)
-        self.line8 = QLineEdit(self.dialog)
-        self.line9 = QLineEdit(self.dialog)
-        self.line10 = QLineEdit(self.dialog)
+        self.com1 = QComboBox(self.dialog)
+        self.com2 = QComboBox(self.dialog)
+        self.com3 = QComboBox(self.dialog)
+        self.com4 = QComboBox(self.dialog)
+        self.com5 = QComboBox(self.dialog)
+        self.com6 = QComboBox(self.dialog)
+        self.com7 = QComboBox(self.dialog)
+        self.com8 = QComboBox(self.dialog)
+        self.com9 = QComboBox(self.dialog)
+        self.com10 = QComboBox(self.dialog)
+        self.pushb = QPushButton(self.dialog)
+        self.out = QLabel(self.dialog)
 
 
         # Title
@@ -206,10 +223,19 @@ class AppForm:
         font.setBold(True)
         self.lb1.setFont(font)
 
-        # Line1
-        self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
-        self.line1.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line1.setStyleSheet('Background-color : lightgrey')
+        # Box 1
+        self.com1.setGeometry(com1_x, com1_y, com1_width, com1_height)
+        self.com1.setStyleSheet('Background-color : lightgrey')
+        self.com1.addItem('Rohit Sharma')
+        self.com1.addItem('Subham Gill')
+        self.com1.addItem('Virat Kholi')
+        self.com1.addItem('Sanju Samson')
+        self.com1.addItem('Jadeja')
+        self.com1.addItem('Hardik Pandya')
+        self.com1.addItem('Axar Patel')
+        self.com1.addItem('Siraj')
+        self.com1.addItem('Bumrah')
+        self.com1.addItem('Shami')
 
         # Label2
         self.lb2.setGeometry(lb2_x, lb2_y, lb2_width, lb2_height)
@@ -219,10 +245,19 @@ class AppForm:
         font.setBold(True)
         self.lb2.setFont(font)
 
-        # Line2
-        self.line2.setGeometry(line2_x, line2_y, line2_width, line2_height)
-        self.line2.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line2.setStyleSheet('Background-color : lightgrey')
+        # Box2
+        self.com2.setGeometry(com2_x, com2_y, com2_width, com2_height)
+        self.com2.setStyleSheet('Background-color : lightgrey')
+        self.com2.addItem('Rohit Sharma')
+        self.com2.addItem('Subham Gill')
+        self.com2.addItem('Virat Kholi')
+        self.com2.addItem('Sanju Samson')
+        self.com2.addItem('Jadeja')
+        self.com2.addItem('Hardik Pandya')
+        self.com2.addItem('Axar Patel')
+        self.com2.addItem('Siraj')
+        self.com2.addItem('Bumrah')
+        self.com2.addItem('Shami')
 
         # Label3
         self.lb3.setGeometry(lb3_x, lb3_y, lb3_width, lb3_height)
@@ -232,10 +267,19 @@ class AppForm:
         font.setBold(True)
         self.lb3.setFont(font)
 
-        # Line3
-        self.line3.setGeometry(line3_x, line3_y, line3_width, line3_height)
-        self.line3.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line3.setStyleSheet('Background-color : lightgrey')
+        # Box3
+        self.com3.setGeometry(com3_x, com3_y, com3_width, com3_height)
+        self.com3.setStyleSheet('Background-color : lightgrey')
+        self.com3.addItem('Rohit Sharma')
+        self.com3.addItem('Subham Gill')
+        self.com3.addItem('Virat Kholi')
+        self.com3.addItem('Sanju Samson')
+        self.com3.addItem('Jadeja')
+        self.com3.addItem('Hardik Pandya')
+        self.com3.addItem('Axar Patel')
+        self.com3.addItem('Siraj')
+        self.com3.addItem('Bumrah')
+        self.com3.addItem('Shami')
 
         # Label4
         self.lb4.setGeometry(lb4_x, lb4_y, lb4_width, lb4_height)
@@ -245,10 +289,19 @@ class AppForm:
         font.setBold(True)
         self.lb4.setFont(font)
 
-        # Line4
-        self.line4.setGeometry(line4_x, line4_y, line4_width, line4_height)
-        self.line4.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line4.setStyleSheet('Background-color : lightgrey')
+        # Box4
+        self.com4.setGeometry(com4_x, com4_y, com4_width, com4_height)
+        self.com4.setStyleSheet('Background-color : lightgrey')
+        self.com4.addItem('Rohit Sharma')
+        self.com4.addItem('Subham Gill')
+        self.com4.addItem('Virat Kholi')
+        self.com4.addItem('Sanju Samson')
+        self.com4.addItem('Jadeja')
+        self.com4.addItem('Hardik Pandya')
+        self.com4.addItem('Axar Patel')
+        self.com4.addItem('Siraj')
+        self.com4.addItem('Bumrah')
+        self.com4.addItem('Shami')
 
         # Label5
         self.lb5.setGeometry(lb5_x, lb5_y, lb5_width, lb5_height)
@@ -258,10 +311,19 @@ class AppForm:
         font.setBold(True)
         self.lb5.setFont(font)
 
-        # Line5
-        self.line5.setGeometry(line5_x, line5_y, line5_width, line5_height)
-        self.line5.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line5.setStyleSheet('Background-color : lightgrey')
+        # Box5
+        self.com5.setGeometry(com5_x, com5_y, com5_width, com5_height)
+        self.com5.setStyleSheet('Background-color : lightgrey')
+        self.com5.addItem('Rohit Sharma')
+        self.com5.addItem('Subham Gill')
+        self.com5.addItem('Virat Kholi')
+        self.com5.addItem('Sanju Samson')
+        self.com5.addItem('Jadeja')
+        self.com5.addItem('Hardik Pandya')
+        self.com5.addItem('Axar Patel')
+        self.com5.addItem('Siraj')
+        self.com5.addItem('Bumrah')
+        self.com5.addItem('Shami')
 
         # Label6
         self.lb6.setGeometry(lb6_x, lb6_y, lb6_width, lb6_height)
@@ -271,10 +333,19 @@ class AppForm:
         font.setBold(True)
         self.lb6.setFont(font)
 
-        # Line6
-        self.line6.setGeometry(line6_x, line6_y, line6_width, line6_height)
-        self.line6.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line6.setStyleSheet('Background-color : lightgrey')
+        # Box6
+        self.com6.setGeometry(com6_x, com6_y, com6_width, com6_height)
+        self.com6.setStyleSheet('Background-color : lightgrey')
+        self.com6.addItem('Rohit Sharma')
+        self.com6.addItem('Subham Gill')
+        self.com6.addItem('Virat Kholi')
+        self.com6.addItem('Sanju Samson')
+        self.com6.addItem('Jadeja')
+        self.com6.addItem('Hardik Pandya')
+        self.com6.addItem('Axar Patel')
+        self.com6.addItem('Siraj')
+        self.com6.addItem('Bumrah')
+        self.com6.addItem('Shami')
 
         # Label7
         self.lb7.setGeometry(lb7_x, lb7_y, lb7_width, lb7_height)
@@ -284,10 +355,19 @@ class AppForm:
         font.setBold(True)
         self.lb7.setFont(font)
 
-        # Line7
-        self.line7.setGeometry(line7_x, line7_y, line7_width, line7_height)
-        self.line7.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line7.setStyleSheet('Background-color : lightgrey')
+        # Box7
+        self.com7.setGeometry(com7_x, com7_y, com7_width, com7_height)
+        self.com7.setStyleSheet('Background-color : lightgrey')
+        self.com7.addItem('Rohit Sharma')
+        self.com7.addItem('Subham Gill')
+        self.com7.addItem('Virat Kholi')
+        self.com7.addItem('Sanju Samson')
+        self.com7.addItem('Jadeja')
+        self.com7.addItem('Hardik Pandya')
+        self.com7.addItem('Axar Patel')
+        self.com7.addItem('Siraj')
+        self.com7.addItem('Bumrah')
+        self.com7.addItem('Shami')
 
         # Label8
         self.lb8.setGeometry(lb8_x, lb8_y, lb8_width, lb8_height)
@@ -297,10 +377,19 @@ class AppForm:
         font.setBold(True)
         self.lb8.setFont(font)
 
-        # Line8
-        self.line8.setGeometry(line8_x, line8_y, line8_width, line8_height)
-        self.line8.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line8.setStyleSheet('Background-color : lightgrey')
+        # Box8
+        self.com8.setGeometry(com8_x, com8_y, com8_width, com8_height)
+        self.com8.setStyleSheet('Background-color : lightgrey')
+        self.com8.addItem('Rohit Sharma')
+        self.com8.addItem('Subham Gill')
+        self.com8.addItem('Virat Kholi')
+        self.com8.addItem('Sanju Samson')
+        self.com8.addItem('Jadeja')
+        self.com8.addItem('Hardik Pandya')
+        self.com8.addItem('Axar Patel')
+        self.com8.addItem('Siraj')
+        self.com8.addItem('Bumrah')
+        self.com8.addItem('Shami')
 
         # Label9
         self.lb9.setGeometry(lb9_x, lb9_y, lb9_width, lb9_height)
@@ -310,10 +399,19 @@ class AppForm:
         font.setBold(True)
         self.lb9.setFont(font)
 
-        # Line9
-        self.line9.setGeometry(line9_x, line9_y, line9_width, line9_height)
-        self.line9.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line9.setStyleSheet('Background-color : lightgrey')
+        # Box9
+        self.com9.setGeometry(com9_x, com9_y, com9_width, com9_height)
+        self.com9.setStyleSheet('Background-color : lightgrey')
+        self.com9.addItem('Rohit Sharma')
+        self.com9.addItem('Subham Gill')
+        self.com9.addItem('Virat Kholi')
+        self.com9.addItem('Sanju Samson')
+        self.com9.addItem('Jadeja')
+        self.com9.addItem('Hardik Pandya')
+        self.com9.addItem('Axar Patel')
+        self.com9.addItem('Siraj')
+        self.com9.addItem('Bumrah')
+        self.com9.addItem('Shami')
 
         # Label10
         self.lb10.setGeometry(lb10_x, lb10_y, lb10_width, lb10_height)
@@ -323,10 +421,86 @@ class AppForm:
         font.setBold(True)
         self.lb10.setFont(font)
 
-        # Line10
-        self.line10.setGeometry(line10_x, line10_y, line10_width, line10_height)
-        self.line10.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.line10.setStyleSheet('Background-color : lightgrey')
+        # Box10
+        self.com10.setGeometry(com10_x, com10_y, com10_width, com10_height)
+        self.com10.setStyleSheet('Background-color : lightgrey')
+        self.com10.addItem('Rohit Sharma')
+        self.com10.addItem('Subham Gill')
+        self.com10.addItem('Virat Kholi')
+        self.com10.addItem('Sanju Samson')
+        self.com10.addItem('Jadeja')
+        self.com10.addItem('Hardik Pandya')
+        self.com10.addItem('Axar Patel')
+        self.com10.addItem('Siraj')
+        self.com10.addItem('Bumrah')
+        self.com10.addItem('Shami')
+
+        # Push Button
+        self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
+        self.pushb.setText('ADD PLAYER')
+        self.pushb.setStyleSheet('color : white; background-color : black')
+
+        # Output
+        self.out.setGeometry(out_x, out_y, out_width, out_height)
+        self.out.setAlignment(Qt.AlignmentFlag.AlignAbsolute)
+        self.out.setStyleSheet('background-color - ligthgrey')
+        self.out.setFrameShape(QFrame.Shape.Box)
+
+        # Set Signal and slot
+        self.pushb.clicked.connect(self.Events)
+        QMetaObject.connectSlotsByName(self.dialog)
+
+    def Events(self):
+        if self.com1.currentText() == 'Rohit Sharma'.upper():
+            self.out.setText(f'1. {self.com1.currentText()} - Top Order Batsman')
+        else:
+            self.out.setText('1. No Player Selected')
+
+        if self.com2.currentText() == 'Subham Gill'.upper():
+            self.out.setText(f'2. {self.com2.text()} - Top Order Batsman')
+        else:
+            self.out.setText('2. No Player Selected')
+
+        if self.com3.currentText() == 'Virat Kholi'.upper():
+            self.out.setText(f'3. {self.com3.text()} - Top Order Batsman')
+        else:
+            self.out.setText('3. No Player Selected')
+
+        if self.com4.currentText() == 'Sanju Samson'.upper():
+            self.out.setText(f'4. {self.com4.text()} - Middle Order Batsman')
+        else:
+            self.out.setText('4. No Player Selected')
+
+        if self.com5.currentText() == 'Jadeja'.upper():
+            self.out.setText(f'5. {self.com5.text()} - All Rounder')
+        else:
+            self.out.setText('5. No Player Selected')
+
+        if self.com6.currentText() == 'Hardik Pandya'.upper():
+            self.out.setText(f'6. {self.com6.text()} - All Rounder')
+        else:
+            self.out.setText('6. No Player Selected')
+
+        if self.com7.currentText() == 'Axar Patel'.upper():
+            self.out.setText(f'7. {self.com6.text()} - All Rounder')
+        else:
+            self.out.setText('7. No Player Selected')
+
+        if self.com8.currentText() == 'Siraj'.upper():
+            self.out.setText(f'8. {self.com8.text()} - Bowler')
+        else:
+            self.out.setText('8. No Player Selected')
+
+        if self.com9.currentText() == 'Bumrah'.upper():
+            self.out.setText(f'9. {self.com9.text()} - Bowler')
+        else:
+            self.out.setText('9. No Player Selected')
+
+        if self.com10.currentText() == 'Shami'.upper():
+            self.out.setText(f'10. {self.com10.text()} - Bowler')
+        else:
+            self.out.setText('10. No Player Selected')
+
 
 
 if __name__ == "__main__":
