@@ -90,7 +90,7 @@ lb8_y = lb4_y
 # PushButton Geometry
 pushb_width = 100
 pushb_height = 30
-pushb_x = spin4_x -50
+pushb_x = spin4_x - 50
 pushb_y = spin4_y + spin4_height + 30
 
 # Output Geometry
