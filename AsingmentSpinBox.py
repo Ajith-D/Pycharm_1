@@ -94,9 +94,9 @@ pushb_x = spin4_x -50
 pushb_y = spin4_y + spin4_height + 30
 
 # Output Geometry
-out_width = 220
+out_width = 150
 out_height = 130
-out_x = (spin2_x + spin2_width) + 50
+out_x = (spin2_x + spin2_width) + 80
 out_y = 130
 
 # Label 9 Geometry
@@ -110,7 +110,7 @@ class AppForm:
         #form = QWidget()
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
-        self.dialog.setWindowTitle('MY SQUAD-2023')
+        self.dialog.setWindowTitle('Vegetable Shop')
         self.dialog.setStyleSheet('background-color : lightgrey')
 
         self.title = None
