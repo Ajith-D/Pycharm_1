@@ -19,7 +19,7 @@ title_y = 40
 lb1_width = 100
 lb1_height = 20
 lb1_x = 40
-lb1_y = 90
+lb1_y = 120
 
 # Spin Box 1 Geometry
 spin1_width = 40
@@ -96,14 +96,14 @@ pushb_y = spin4_y + spin4_height + 30
 # Output Geometry
 out_width = 220
 out_height = 130
-out_x = (spin2_x + spin2_width) + 40
-out_y = 100
+out_x = (spin2_x + spin2_width) + 50
+out_y = 130
 
 # Label 9 Geometry
 lb9_width = 65
 lb9_height = 20
-lb9_x = title_x + 105
-lb9_y = 70
+lb9_x = title_x + 110
+lb9_y = 90
 
 class AppForm:
     def __init__(self, form):
