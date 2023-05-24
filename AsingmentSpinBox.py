@@ -6,17 +6,17 @@ from PyQt6.QtWidgets import *
 
 # 2 Set Constant Values
 # Dialog Geometry
-dlg_width = 530
+dlg_width = 500
 dlg_height = 400
 
 # Title Geometry
 title_width = 205
 title_height = 20
-title_x = 220
+title_x = 200
 title_y = 40
 
 # Label 1 Geometry
-lb1_width = 135
+lb1_width = 100
 lb1_height = 20
 lb1_x = 40
 lb1_y = 90
@@ -28,7 +28,7 @@ spin1_x = (lb1_x + lb1_width) + 10
 spin1_y = lb1_y - 3
 
 # Label 2 Geometry
-lb2_width = 135
+lb2_width = 100
 lb2_height = 20
 lb2_x = 40
 lb2_y = (lb1_y + lb1_height) + 10
@@ -40,7 +40,7 @@ spin2_x = (lb2_x + lb2_width) + 10
 spin2_y = lb2_y - 3
 
 # Label 3 Geometry
-lb3_width = 135
+lb3_width = 100
 lb3_height = 20
 lb3_x = 40
 lb3_y = (lb2_y + lb2_height) + 10
@@ -52,7 +52,7 @@ spin3_x = (lb3_x + lb3_width) + 10
 spin3_y = lb3_y - 3
 
 # Label 4 Geometry
-lb4_width = 135
+lb4_width = 100
 lb4_height = 20
 lb4_x = 40
 lb4_y = (lb3_y + lb3_height) + 10
@@ -102,7 +102,7 @@ out_y = 100
 # Label 9 Geometry
 lb9_width = 65
 lb9_height = 20
-lb9_x = title_x + 120
+lb9_x = title_x + 105
 lb9_y = 70
 
 class AppForm:
@@ -256,6 +256,9 @@ class AppForm:
         self.out.setAlignment(Qt.AlignmentFlag.AlignVCenter)
         self.out.setStyleSheet('background-color: lightgrey')
         self.out.setFrameShape(QFrame.Shape.WinPanel)
+        font = QFont('Times')
+        font.setBold(True)
+        self.out.setFont(font)
 
         # Label9
         self.lb9.setGeometry(lb9_x, lb9_y, lb9_width, lb9_height)
@@ -271,8 +274,13 @@ class AppForm:
         QMetaObject.connectSlotsByName(self.dialog)
 
     def Events(self):
-        self.out.setText(f'''1.Carrot {self.spin1.Value()} KG\n\n2.Onion {self.spin2.Value()} KG
-        \n3.Tomato{self.spin3.Value()} KG\n\n4.Potato{self.spin4.Value()} KG''')
+        value1 = self.spin1.value()
+        value2 = self.spin2.value()
+        value3 = self.spin3.value()
+        value4 = self.spin4.value()
+
+        self.out.setText(f'''1.Carrot {str(value1)} KG\n\n2.Onion {str(value2)} KG
+        \n3.Tomato {str(value3)} KG\n\n4.Potato {str(value4)} KG''')
 
 
 if __name__ == "__main__":
