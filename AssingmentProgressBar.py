@@ -141,6 +141,10 @@ class AppForm:
         self.out.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.out.setFrameShape(QFrame.Shape.WinPanel)
         self.out.setStyleSheet('color: black; background-color: lightgrey')
+        font = QFont('Times')
+        font.setBold(True)
+        font.setPointSize(10)
+        self.out.setFont(font)
 
         # Set Signal and slot
         self.pushb.clicked.connect(self.Events)
@@ -157,21 +161,19 @@ class AppForm:
             count = len(fnmatch.filter(os.listdir(path), '*.*'))
             total_files = total_files + count
 
-        self.out.setText(f'Total Files: {total_files}')
+        self.out.setText(f'{total_files}')
 
         #Set Progress Minimum & Maximum
         self.bar.setMinimum(0)
         self.bar.setMaximum(total_files)
 
-        # File Name
         count = 0
         for path, subdir, files, in os.walk(root):
             for file in files:
                 count = count + 1
                 self.bar.setValue(count)
-                self.out.setText(output)
-                output = file + '\n' + output
                 QApplication.processEvents()
+
 
 
 if __name__ == "__main__":
