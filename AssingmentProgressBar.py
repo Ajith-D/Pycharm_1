@@ -45,7 +45,7 @@ out_y = label2_y - 2
 pushb_width = 190
 pushb_height = 30
 pushb_x = line1_x + 50
-pushb_y = (out_y + out_width) -5
+pushb_y = (out_y + out_width) - 5
 
 # Progress Bar Geometry
 bar_width = dlg_width - 80
@@ -153,7 +153,6 @@ class AppForm:
     def Events(self):
         output = '\n'
         root = self.line1.text()
-        self.out.setText('Initialize the Progress!')
 
         # Like While & for Statement
         total_files = 0
@@ -172,6 +171,7 @@ class AppForm:
             for file in files:
                 count = count + 1
                 self.bar.setValue(count)
+                output = file + '\n' + output
                 QApplication.processEvents()
 
 
