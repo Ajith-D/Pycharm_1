@@ -9,7 +9,7 @@ import fnmatch
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 500
-dlg_height = 400
+dlg_height = 500
 
 # Title Geometry
 title_width = 150
@@ -43,7 +43,7 @@ bar_y = 110
 
 # Output Geometry
 out_width = 320
-out_height = 150
+out_height = 300
 out_x = int((dlg_width / 2) - (out_width / 2))
 out_y = (pushb_y + pushb_height) + 60
 
@@ -52,12 +52,12 @@ progress_style = '''
 QProgressBar {
      border: 2px solid  grey;
      border-radius: 5px;
-     background-color: #FFFFFF;
+     background-color: #FFFFCC;
      height: 5;
 }
 
 QProgressBar::chunk {
-     background-color: #3dcd58;
+     background-color: #556B2F;
      width: 10px;
 }
 '''
@@ -69,7 +69,7 @@ class AppForm:
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('File Monitor')
-        self.dialog.setStyleSheet('background-color: lightgrey')
+        self.dialog.setStyleSheet('background-color: #99CC66')
 
         self.title = None
         self.Path = None
@@ -102,9 +102,9 @@ class AppForm:
 
         # Line1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
-        self.line1.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.line1.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.line1.setText(r'')
-        self.line1.setStyleSheet('Background-color : white')
+        self.line1.setStyleSheet('Background-color : lightgrey')
 
         # Progress Bar
         self.bar.setGeometry(bar_x, bar_y, bar_width, bar_height)
@@ -121,6 +121,7 @@ class AppForm:
         self.out.setGeometry(out_x, out_y, out_width, out_height)
         self.out.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.out.setFrameShape(QFrame.Shape.WinPanel)
+        self.out.setStyleSheet('color: black; background-color: lightgrey')
 
         # Set Signal and slot
         self.pushb.clicked.connect(self.Events)
@@ -128,7 +129,7 @@ class AppForm:
 
     def Events(self):
         output = '\n'
-        root = self.line.text()
+        root = self.line1.text()
         self.out.setText('Initialize the Progress!')
 
         # Like While & for Statement
