@@ -9,7 +9,7 @@ import fnmatch
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 500
-dlg_height = 500
+dlg_height = 550
 
 # Title Geometry
 title_width = 150
@@ -43,7 +43,7 @@ bar_y = 110
 
 # Output Geometry
 out_width = 320
-out_height = 300
+out_height = 380
 out_x = int((dlg_width / 2) - (out_width / 2))
 out_y = (pushb_y + pushb_height) + 60
 
