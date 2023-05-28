@@ -111,7 +111,7 @@ class AppForm:
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('Vegetable Shop')
-        self.dialog.setStyleSheet('background-color : lightgrey')
+        self.dialog.setStyleSheet('background-color : #FFEFD5')
 
         self.title = None
         self.lb1 = None
