@@ -162,7 +162,7 @@ class AppForm:
 
         self.out.setText(f'{total_files}')
 
-        #Set Progress Minimum & Maximum
+        # Set Progress Minimum & Maximum
         self.bar.setMinimum(0)
         self.bar.setMaximum(total_files)
 
@@ -173,7 +173,6 @@ class AppForm:
                 self.bar.setValue(count)
                 output = file + '\n' + output
                 QApplication.processEvents()
-
 
 
 if __name__ == "__main__":
