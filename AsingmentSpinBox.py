@@ -94,13 +94,13 @@ pushb_x = spin4_x - 50
 pushb_y = spin4_y + spin4_height + 30
 
 # Output Geometry
-out_width = 150
+out_width = 120
 out_height = 130
-out_x = (spin2_x + spin2_width) + 80
+out_x = (spin2_x + spin2_width) + 90
 out_y = 130
 
 # Label 9 Geometry
-lb9_width = 65
+lb9_width = 60
 lb9_height = 20
 lb9_x = title_x + 110
 lb9_y = 90
