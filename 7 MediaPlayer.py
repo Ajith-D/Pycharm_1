@@ -33,6 +33,7 @@ pushb_height = 25
 pushb_x = (line1_x + line1_width) + 10
 pushb_y = song_y - 4
 
+
 # 3 Create Class
 class AppForm:
     def __init__(self, form):
@@ -80,7 +81,7 @@ class AppForm:
         # Line1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
         self.line1.setAlignment(Qt.AlignmentFlag.AlignLeft)
-        self.line1.setText(r'')
+        #self.line1.setText("C:\Users\User\Desktop\course\Song\journey.mp3")
         self.line1.setStyleSheet('Background-color : lightgrey')
 
         # For Player & Audio
@@ -102,13 +103,13 @@ class AppForm:
 
     # 4 Set Event
     def Events(self):
-        Song = self.line1.text()
+        Song = self.line1.currentText()
         url = QUrl.fromLocalFile(Song)
         self.player.setSource(url)
         self.player.play()
 
 
- # 5 Execute Application
+# 5 Execute Application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
