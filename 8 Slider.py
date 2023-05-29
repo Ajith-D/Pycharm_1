@@ -62,8 +62,6 @@ class AppForm:
         self.song = QLabel(self.dialog)
         self.line1 = QLineEdit(self.dialog)
         self.pushb = QPushButton(self.dialog)
-        #self.player = QMediaPlayer(self.dialog)
-        #self.audio = QAudioOutput(self.dialog)
         self.Volume = QSlider(self.dialog)
 
         # For Title
@@ -88,12 +86,8 @@ class AppForm:
         # Line1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
         self.line1.setAlignment(Qt.AlignmentFlag.AlignLeft)
-        self.line1.setText("C:\Users\User\Desktop\course\Song\journey.mp3")
+        self.line1.setText(r"C:\Users\User\Desktop\course\Song\Journey-MassTamilan.fm.mp3" )
         self.line1.setStyleSheet('Background-color : lightgrey')
-
-        # For Player & Audio
-        #self.audio.setVolume(70)
-        #self.player.setAudioOutput(self.audio)
 
         # For Volume Slider
         self.Volume.setGeometry(volume_x, volume_y, volume_width, volume_height)

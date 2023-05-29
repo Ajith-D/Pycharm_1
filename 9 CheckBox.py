@@ -3,12 +3,12 @@ import sys
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
-from PyQt6.QtMultimedia import *
+import pyglet
 
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 500
-dlg_height = 230
+dlg_height = 260
 
 # Title Geometry
 title_width = 200
@@ -33,6 +33,18 @@ pushb_height = 25
 pushb_x = (line1_x + line1_width) + 10
 pushb_y = song_y - 4
 
+# Volume Slider Geometry
+volume_width = 300
+volume_height = 30
+volume_x = int((dlg_width / 2) - (volume_width / 2))
+volume_y = pushb_y + pushb_height + 40
+
+# Mute CheckBox
+mute_width = 100
+mute_height = 20
+mute_x = 20
+mute_y = volume_y + volume_height + 10
+
 
 # 3 Create Class
 class AppForm:
@@ -48,16 +60,18 @@ class AppForm:
         self.pushb = None
         self.line1 = None
         self.player = None
-        self.audio = None
+        self.mute = None
+        self.Volume = None
+        self.c_volume = None
 
-    # 4 Set Widgets
+        # 4 Set Widgets
     def Widgets(self):
         self.title = QLabel(self.dialog)
         self.song = QLabel(self.dialog)
         self.line1 = QLineEdit(self.dialog)
         self.pushb = QPushButton(self.dialog)
-        self.player = QMediaPlayer(self.dialog)
-        self.audio = QAudioOutput(self.dialog)
+        self.Volume = QSlider(self.dialog)
+        self.mute = QCheckBox(self.dialog)
 
         # For Title
         self.title.setGeometry(title_x, title_y, title_width, title_height)
@@ -81,12 +95,19 @@ class AppForm:
         # Line1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
         self.line1.setAlignment(Qt.AlignmentFlag.AlignLeft)
-        self.line1.setText(r"C:\Users\User\Desktop\course\Song\Master the Blaster.mp3")
+        self.line1.setText(r"C:\Users\User\Desktop\course\Song\Journey-MassTamilan.fm.mp3")
         self.line1.setStyleSheet('Background-color : lightgrey')
 
-        # For Player & Audio
-        self.audio.setVolume(70)
-        self.player.setAudioOutput(self.audio)
+        # For Volume Slider
+        self.Volume.setGeometry(volume_x, volume_y, volume_width, volume_height)
+        self.Volume.setMinimum(0)
+        self.Volume.setMaximum(100)
+        self.Volume.setValue(60)
+        self.Volume.setOrientation(Qt.Orientation.Horizontal)
+
+        # CheckBox
+        self.mute.setGeometry(mute_x, mute_y, mute_width, mute_height)
+        self.mute.setText('MUTE')
 
         # Push Button
         self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
@@ -98,15 +119,32 @@ class AppForm:
         self.pushb.setFont(font)
 
         # Set Signal and slot
-        self.pushb.clicked.connect(self.Events)
+        self.pushb.clicked.connect(self.play_song)
+        self.Volume.valueChanged.connect(self.update_volume)
+        self.mute.stateChanged.connect(self.mute_song)
         QMetaObject.connectSlotsByName(self.dialog)
 
-    # 4 Set Event
-    def Events(self):
+    # 4 Set Events
+    def update_volume(self):
+        new = self.Volume.value()
+        self.player.volume = new/10
+
+    def play_song(self):
         Song = self.line1.text()
-        url = QUrl.fromLocalFile(Song)
-        self.player.setSource(url)
+        source = pyglet.media.load(Song, streaming=False)
+        self.player = pyglet.media.Player()
+        self.player.queue(source)
         self.player.play()
+
+    def mute_song(self):
+        if self.player.volume != 0:
+            # c_volume - is assumed as constant volume for player.volume
+            self.c_volume = self.player.volume
+
+        if self.mute.isChecked():
+            self.player.volume = 0
+        else:
+            self.player.volume = self.c_volume
 
 
 # 5 Execute Application
