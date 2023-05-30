@@ -81,7 +81,7 @@ class AppForm:
         # Line1
         self.line1.setGeometry(line1_x, line1_y, line1_width, line1_height)
         self.line1.setAlignment(Qt.AlignmentFlag.AlignLeft)
-        self.line1.setText(r"C:\Users\User\Desktop\course\Song\Master the Blaster.mp3")
+        self.line1.setText(r"C:\Users\User\Desktop\course\Song\Journey-MassTamilan.fm.mp3")
         self.line1.setStyleSheet('Background-color : lightgrey')
 
         # For Player & Audio
