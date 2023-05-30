@@ -66,7 +66,7 @@ pushb_y = male_y + male_height + 20
 # Output Geometry
 out_width = 400
 out_height = 50
-out_x = int((dlg_width / 2) - (out_width / 2))
+out_x = int((dlg_width / 2) - (out_width / 2)) - 5
 out_y = (pushb_y + pushb_height) + 20
 
 class AppForm:
@@ -137,6 +137,36 @@ class AppForm:
         # Female
         self.female.setGeometry(female_x, female_y, female_width, female_height)
         self.female.setText('FEMALE')
+
+        # Push Button
+        self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
+        self.pushb.setText('SIGN UP')
+        self.pushb.setStyleSheet('background-color: white')
+
+        # Output
+        self.out.setGeometry(out_x, out_y, out_width, out_height)
+        self.out.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        # Set Signal and slot
+        self.pushb.clicked.connect(self.Events)
+        self.male.toggled.connect(self.male_selected)
+        self.female.toggled.connect(self.female_selected)
+        QMetaObject.connectSlotsByName(self.dialog)
+
+    def male_selected(self):
+        print('Male Selected')
+
+    def female_selected(self):
+        print('Female Selected')
+
+    def Events(self):
+        if self.male.isChecked():
+            self.out.setText(f'''
+            Welcome {self.line1.text()} Sir!''')
+
+        else:
+            self.out.setText(f'''
+            Welcome {self.line1.text()} Ma'am!''')
 
 
 
