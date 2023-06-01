@@ -9,7 +9,7 @@ import pandas as pd
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 800
-dlg_height = 600
+dlg_height = 550
 
 # Title Geometry
 title_width = 200
@@ -18,9 +18,9 @@ title_x = int((dlg_width / 2) - (title_width / 2)) + 40
 title_y = 20
 
 # Task Geometry
-task_width = 100
+task_width = 160
 task_height = 20
-task_x = 10
+task_x = -30
 task_y = title_y + 40
 
 line_width = 100
@@ -31,13 +31,13 @@ line_y = task_y - 3
 # Calendar Geometry
 cal_width = 300
 cal_height = 300
-cal_x = line_x - 50
+cal_x = line_x - 90
 cal_y = line_y + 50
 
 # Button Geometry
 add_width = 200
 add_height = 40
-add_x = line_x + 5
+add_x = line_x - 40
 add_y = (cal_y + cal_height) + 48
 
 # ListView Geometry
@@ -55,6 +55,7 @@ class AppForm:
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('Task Manager')
+        self.dialog.setStyleSheet('background-color : #FFEFD5')
 
         # Define Field
         self.title = None
@@ -100,15 +101,20 @@ class AppForm:
         self.cal.setGeometry(cal_x, cal_y, cal_width, cal_height)
         self.cal.setGridVisible(True)
         self.cal.setMinimumDate(QDate.currentDate())
+        self.cal.setStyleSheet('background-color : white')
 
         # Add Task
         self.add.setGeometry(add_x, add_y, add_width, add_height)
         self.add.setText('ADD TASK')
         self.add.setStyleSheet('color: White; background-color : Black')
+        font = QFont('Times')
+        font.setBold(True)
+        self.add.setFont(font)
 
         # Table View
         self.table.setGeometry(tv_x, tv_y, tv_width, tv_height)
         self.table.setFrameShape(QFrame.Shape.WinPanel)
+        self.table.setStyleSheet('background-color: white')
 
         # Set Slot & signals
         self.add.clicked.connect(self.add_task)
