@@ -118,8 +118,8 @@ class AppForm:
         Task = self.line.text()
         appointment = self.cal.selectedDate().toString("yyyy-mm-dd")
         Tasks.append([Task, appointment])
-        df = pd.DataFrame(Tasks, columns=['Tasks', 'Date'],
-                      index=range(1, len(tasks) + 1))
+        df = pd.DataFrame(Tasks, columns=['Task', 'Date'],
+                      index=range(1, len(Tasks) + 1))
         self.model = AtomzTable(df)
         self.table.setModel(self.model)
 
