@@ -150,7 +150,7 @@ class AppForm:
 
         # Title
         self.title.setGeometry(title_x, title_y, title_width, title_height)
-        self.title.setText('VGE - SHOPPING')
+        self.title.setText('VEG - SHOPPING')
         self.title.setStyleSheet('color : blue')
         font = QFont('Times')
         font.setBold(True)
