@@ -8,7 +8,7 @@ import pandas as pd
 
 # 2 Set Constant Values
 # Dialog Geometry
-dlg_width = 800
+dlg_width = 760
 dlg_height = 550
 
 # Title Geometry
@@ -26,7 +26,7 @@ task_y = title_y + 40
 line_width = 100
 line_height = 20
 line_x = (task_x + task_width) + 10
-line_y = task_y - 3
+line_y = task_y - 2
 
 # Calendar Geometry
 cal_width = 300
@@ -55,7 +55,7 @@ class AppForm:
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('Task Manager')
-        self.dialog.setStyleSheet('background-color : #FFEFD5')
+        self.dialog.setStyleSheet('background-color : #336666')
 
         # Define Field
         self.title = None
@@ -92,6 +92,7 @@ class AppForm:
         self.task.setGeometry(task_x, task_y, task_width, task_height)
         self.task.setText('Task: ')
         self.task.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.task.setStyleSheet('color: white')
 
         # Line
         self.line.setGeometry(line_x, line_y, line_width, line_height)
