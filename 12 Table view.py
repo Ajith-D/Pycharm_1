@@ -23,10 +23,10 @@ task_height = 20
 task_x = -30
 task_y = title_y + 40
 
-line_width = 100
+line_width = 200
 line_height = 20
 line_x = (task_x + task_width) + 10
-line_y = task_y - 2
+line_y = task_y
 
 # Calendar Geometry
 cal_width = 300
@@ -43,7 +43,7 @@ add_y = (cal_y + cal_height) + 48
 # ListView Geometry
 tv_width = 300
 tv_height = 300
-tv_x = cal_x + cal_width + 70
+tv_x = cal_x + cal_width + 60
 tv_y = cal_y
 
 Tasks = []
@@ -93,6 +93,10 @@ class AppForm:
         self.task.setText('Task: ')
         self.task.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.task.setStyleSheet('color: white')
+        font = QFont('Times')
+        font.setPointSize(12)
+        font.setBold(True)
+        self.task.setFont(font)
 
         # Line
         self.line.setGeometry(line_x, line_y, line_width, line_height)
