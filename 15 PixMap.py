@@ -29,6 +29,8 @@ class AppForm:
 
         self.placement1 = None
         self.placement2 = None
+        self.placement3 = None
+        self.placement4 = None
         self.hlayout = None
         self.vlayout = None
 
@@ -52,21 +54,35 @@ class AppForm:
 
         # Set Placement 1
         self.placement1 = QWidget(self.dialog)
-        self.placement1.setGeometry(0, 10, 300, 500)
+        self.placement1.setGeometry(0, 10, 300, 100)
         self.placement1.setStyleSheet('background-color : #66FF99')
         self.vlayout = QVBoxLayout(self.dialog)
         self.vlayout.addWidget(self.label1)
-        self.vlayout.addWidget(self.label2)
         self.placement1.setLayout(self.vlayout)
 
         # Set Placement2
         self.placement2 = QWidget(self.dialog)
-        self.placement2.setGeometry(300, 0, 500, 260)
-        self.placement2.setStyleSheet('background-color : #666')
+        self.placement2.setGeometry(300, 0, 300, 260)
+        self.placement2.setStyleSheet('background-color : #000000')
         self.hlayout = QHBoxLayout(self.dialog)
-        self.hlayout.addWidget(self.label3)
-        self.hlayout.addWidget(self.label4)
+        self.hlayout.addWidget(self.label2)
         self.placement2.setLayout(self.hlayout)
+
+        # Set Placement3
+        self.placement3 = QWidget(self.dialog)
+        self.placement3.setGeometry(0, 160, 230, 200)
+        self.placement3.setStyleSheet('background-color : #666')
+        self.vlayout = QVBoxLayout(self.dialog)
+        self.vlayout.addWidget(self.label3)
+        self.placement3.setLayout(self.vlayout)
+
+        # Set Placement4
+        self.placement4 = QWidget(self.dialog)
+        self.placement4.setGeometry(630, 0, 250, 260)
+        self.placement4.setStyleSheet('background-color : #666')
+        self.hlayout = QHBoxLayout(self.dialog)
+        self.hlayout.addWidget(self.label4)
+        self.placement4.setLayout(self.hlayout)
 
 
 # 5 Execute Application
