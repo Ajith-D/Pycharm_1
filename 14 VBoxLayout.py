@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import *
 # 2 Set Constant Values
 # Dialog Geometry
 dlg_width = 400
-dlg_height = 200
+dlg_height = 400
 
 # 3 Set class
 class AppForm:
@@ -42,7 +42,6 @@ class AppForm:
         self.layout = QVBoxLayout(self.dialog)
         self.placement.setGeometry(0, 0, 300, 100)
 
-        # Uniform Sizing for all Left, right, center
         self.layout.addWidget(self.pb_top)
         self.layout.addWidget(self.pb_center)
         self.layout.addWidget(self.pb_bottom)
