@@ -36,11 +36,11 @@ class AppForm:
 
     def Widgets(self):
         # Set Pixmap & Label
-        self.logo1 = QPixmap(r"C:\Users\User\Desktop\course\New folder\default-share.png")
+        self.logo1 = QPixmap(r"C:\Users\User\Desktop\course\New folder\download.png")
         self.label1 = QLabel(self.dialog)
         self.label1.setPixmap(self.logo1)
 
-        self.logo2 = QPixmap(r"C:\Users\User\Desktop\course\New folder\displaying-19-gallery-images-for-linkedin-logo-png-25.png")
+        self.logo2 = QPixmap(r"C:\Users\User\Desktop\course\New folder\download.png")
         self.label2 = QLabel(self.dialog)
         self.label2.setPixmap(self.logo2)
 
@@ -48,13 +48,13 @@ class AppForm:
         self.label3 = QLabel(self.dialog)
         self.label3.setPixmap(self.logo3)
 
-        self.logo4 = QPixmap(r"C:\Users\User\Desktop\course\New folder\images.png")
+        self.logo4 = QPixmap(r"C:\Users\User\Desktop\course\New folder\download.png")
         self.label4 = QLabel(self.dialog)
         self.label4.setPixmap(self.logo4)
 
         # Set Placement 1
         self.placement1 = QWidget(self.dialog)
-        self.placement1.setGeometry(0, 10, 300, 100)
+        self.placement1.setGeometry(0, 10, 230, 200)
         self.placement1.setStyleSheet('background-color : #66FF99')
         self.vlayout = QVBoxLayout(self.dialog)
         self.vlayout.addWidget(self.label1)
@@ -62,7 +62,7 @@ class AppForm:
 
         # Set Placement2
         self.placement2 = QWidget(self.dialog)
-        self.placement2.setGeometry(300, 0, 300, 260)
+        self.placement2.setGeometry(300, 10, 240, 200)
         self.placement2.setStyleSheet('background-color : #000000')
         self.hlayout = QHBoxLayout(self.dialog)
         self.hlayout.addWidget(self.label2)
@@ -70,7 +70,7 @@ class AppForm:
 
         # Set Placement3
         self.placement3 = QWidget(self.dialog)
-        self.placement3.setGeometry(0, 160, 230, 200)
+        self.placement3.setGeometry(0, 230, 230, 200)
         self.placement3.setStyleSheet('background-color : #666')
         self.vlayout = QVBoxLayout(self.dialog)
         self.vlayout.addWidget(self.label3)
@@ -78,8 +78,8 @@ class AppForm:
 
         # Set Placement4
         self.placement4 = QWidget(self.dialog)
-        self.placement4.setGeometry(630, 0, 250, 260)
-        self.placement4.setStyleSheet('background-color : #666')
+        self.placement4.setGeometry(560, 10, 240, 200)
+        self.placement4.setStyleSheet('background-color : #FFEFD5')
         self.hlayout = QHBoxLayout(self.dialog)
         self.hlayout.addWidget(self.label4)
         self.placement4.setLayout(self.hlayout)
