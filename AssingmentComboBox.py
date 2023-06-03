@@ -457,6 +457,9 @@ class AppForm:
         self.pushb.setGeometry(pushb_x, pushb_y, pushb_width, pushb_height)
         self.pushb.setText('ADD PLAYER')
         self.pushb.setStyleSheet('color : white; background-color : black')
+        font = QFont('Times')
+        font.setBold(True)
+        self.pushb.setFont(font)
 
         # Output
         self.out.setGeometry(out_x, out_y, out_width, out_height)
