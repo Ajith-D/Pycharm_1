@@ -62,7 +62,7 @@ class AppForm:
 
         # Set Placement2
         self.placement2 = QWidget(self.dialog)
-        self.placement2.setGeometry(300, 10, 240, 200)
+        self.placement2.setGeometry(280, 10, 240, 200)
         self.placement2.setStyleSheet('background-color : #000000')
         self.hlayout = QHBoxLayout(self.dialog)
         self.hlayout.addWidget(self.label2)
@@ -70,7 +70,7 @@ class AppForm:
 
         # Set Placement3
         self.placement3 = QWidget(self.dialog)
-        self.placement3.setGeometry(0, 230, 230, 200)
+        self.placement3.setGeometry(0, 240, 230, 200)
         self.placement3.setStyleSheet('background-color : #666')
         self.vlayout = QVBoxLayout(self.dialog)
         self.vlayout.addWidget(self.label3)
