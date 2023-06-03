@@ -4,7 +4,7 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 import pandas as pd
-#from AtomzTable import *
+#from AatomzTable import *
 
 # 2 Set Constant Values
 # Dialog Geometry
