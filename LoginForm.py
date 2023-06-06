@@ -21,7 +21,7 @@ class AppForm(QWidget):
         layout.addWidget(user, 1, 0)
 
         pwd = QLabel('PASSWORD: ')
-        layout.addWidget(pwd, 2 , 0)
+        layout.addWidget(pwd, 2, 0)
 
         self.input1 = QLineEdit()
         layout.addWidget(self.input1, 1, 1, 1, 2)
