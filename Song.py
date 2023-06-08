@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QPushButton, QTextEdit, QMessageBox, QLineEdit
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QPushButton, QTextEdit, QMessageBox, QLineEdit, QSlider
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
 import random
@@ -27,10 +27,23 @@ class SongRecommender(QMainWindow):
         self.button_recommend.clicked.connect(self.recommend_song)
         self.button_recommend.setStyleSheet('color: black; background-color: #FFEFD5')
 
-        self.button_play = QPushButton("Play Song")
+        self.button_play = QPushButton("Play")
         self.button_play.setEnabled(False)
-        self.button_play.clicked.connect(self.play_song)
+        self.button_play.clicked.connect(self.play_pause_song)
         self.button_play.setStyleSheet('color: white; background-color: black')
+
+        self.button_next = QPushButton("Next")
+        self.button_next.setEnabled(False)
+        self.button_next.clicked.connect(self.next_song)
+        self.button_next.setStyleSheet('color: white; background-color: black')
+
+        self.slider_volume = QSlider(Qt.Orientation.Horizontal)
+        self.slider_volume.setMinimum(0)
+        self.slider_volume.setMaximum(100)
+        self.slider_volume.setValue(50)
+        self.slider_volume.setTickInterval(10)
+        self.slider_volume.setTickPosition(QSlider.TickPosition.TicksBelow)
+        self.slider_volume.valueChanged.connect(self.set_volume)
 
         self.text_edit = QTextEdit()
         self.text_edit.setReadOnly(True)
@@ -46,6 +59,8 @@ class SongRecommender(QMainWindow):
         layout.addWidget(self.input_line_edit)
         layout.addWidget(self.button_recommend)
         layout.addWidget(self.button_play)
+        layout.addWidget(self.button_next)
+        layout.addWidget(self.slider_volume)
         layout.addWidget(self.text_edit)
 
         widget = QWidget()
@@ -55,6 +70,7 @@ class SongRecommender(QMainWindow):
         self.setCentralWidget(widget)
 
         self.current_song = None
+        self.is_playing = False
 
     def recommend_song(self):
         mood = self.input_line_edit.text().lower()
@@ -85,17 +101,66 @@ class SongRecommender(QMainWindow):
         self.label.setText(f"Now Playing: {title}")
 
         self.button_play.setEnabled(True)
+        self.button_next.setEnabled(True)
 
-    def play_song(self):
+    def play_pause_song(self):
         if self.current_song:
-            song_file = self.current_song["file"]
+            if not self.is_playing:
+                # Play song
+                song_file = self.current_song["file"]
+                pygame.mixer.init()
+                pygame.mixer.music.load(song_file)
+                pygame.mixer.music.play()
+                self.is_playing = True
+                self.button_play.setText("Pause")
+            else:
+                # Pause song
+                pygame.mixer.music.pause()
+                self.is_playing = False
+                self.button_play.setText("Play")
 
-            pygame.mixer.init()
-            pygame.mixer.music.load(song_file)
-            pygame.mixer.music.play()
+    def next_song(self):
+        self.play_pause_song()  # Pause current song before selecting next song
 
-            # Update GUI with song playing status
-            self.label.setText(f"Now Playing: {self.current_song['title']} (Playing)")
+        mood = self.input_line_edit.text().lower()
+        song_dir = song_directory.get(mood)
+
+        if not song_dir:
+            self.text_edit.append(f"Chatbot: Sorry, no songs found for the mood: {mood}")
+            self.input_line_edit.clear()
+            return
+
+        song_files = os.listdir(song_dir)
+        if not song_files:
+            self.text_edit.append(f"Chatbot: Sorry, no songs found for the mood: {mood}")
+            self.input_line_edit.clear()
+            return
+
+        song_files.remove(os.path.basename(self.current_song["file"]))  # Remove current song from list
+
+        if len(song_files) == 0:
+            self.text_edit.append("Chatbot: No more songs found for the given mood.")
+            self.input_line_edit.clear()
+            return
+
+        song_file = random.choice(song_files)
+        song_path = os.path.join(song_dir, song_file)
+        title = os.path.splitext(song_file)[0]
+
+        self.current_song = {"title": title, "file": song_path}
+
+        self.text_edit.append("Chatbot: I recommend the next song:")
+        self.text_edit.append(f"Title: {title}")
+        self.text_edit.append("\n")
+
+        # Display song information
+        self.label.setText(f"Now Playing: {title}")
+
+        self.play_pause_song()  # Resume playing the next song
+
+    def set_volume(self, value):
+        volume = value / 100.0
+        pygame.mixer.music.set_volume(volume)
 
     def closeEvent(self, event):
         if pygame.mixer.music.get_busy():
