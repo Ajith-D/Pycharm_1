@@ -40,7 +40,7 @@ class SongRecommender(QMainWindow):
         self.slider_volume = QSlider(Qt.Orientation.Horizontal)
         self.slider_volume.setMinimum(0)
         self.slider_volume.setMaximum(100)
-        self.slider_volume.setValue(50)
+        self.slider_volume.setValue(80)
         self.slider_volume.setTickInterval(10)
         self.slider_volume.setTickPosition(QSlider.TickPosition.TicksBelow)
         self.slider_volume.valueChanged.connect(self.set_volume)
