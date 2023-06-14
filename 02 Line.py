@@ -1,6 +1,5 @@
 # 1 Import Libraries
 import sys
-
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
@@ -70,7 +69,6 @@ class AppForm:
         self.line2 = None
         self.pushb = None
         self.out = None
-
 
     # 4 Create Widgets
     def Widgets(self):
