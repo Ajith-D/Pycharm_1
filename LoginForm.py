@@ -10,6 +10,7 @@ class AppForm(QWidget):
         layout = QGridLayout()
         # To set Margin
         layout.setContentsMargins(20, 20, 20, 20)
+
         # To set Space Between Widgets
         layout.setSpacing(10)
         self.setLayout(layout)
