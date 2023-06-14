@@ -106,7 +106,6 @@ class AppForm:
         # Set Slot
         QMetaObject.connectSlotsByName(self.dialog)
 
-
     # 3 Set Events
     def Event(self):
         self.label1.setText("Set Hello")
