@@ -70,7 +70,6 @@ class AppForm:
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('Sign-up Form')
-        self.dialog.setStyleSheet('background-color: lightgrey')
 
         self.title = None
         self.name = None
