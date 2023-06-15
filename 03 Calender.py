@@ -52,7 +52,7 @@ class AppForm:
         self.dialog = form
         self.dialog.setGeometry(100, 100, dlg_width, dlg_height)
         self.dialog.setWindowTitle('Task Manager')
-        self.dialog.setStyleSheet('background-color : #FFEFD5')
+        self.dialog.setStyleSheet('background-color : lightgrey')
 
         # Define Field
         self.title = None
