@@ -101,6 +101,7 @@ class AppForm:
         self.pushb.clicked.connect(self.Events)
         QMetaObject.connectSlotsByName(self.dialog)
 
+
     # 4 Set Event
     def Events(self):
         Song = self.line1.text()
