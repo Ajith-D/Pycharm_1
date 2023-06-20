@@ -471,7 +471,6 @@ class AppForm:
         self.pushb.clicked.connect(self.Events)
         QMetaObject.connectSlotsByName(self.dialog)
 
-
     def Events(self):
         self.out.setText(f'''1.{self.com1.currentText()}-Top Order Batsmen\n\n2.{self.com2.currentText()}-Top Order Batsmen
     \n3.{self.com3.currentText()}-Top Order Batsmen\n\n4.{self.com4.currentText()}-Middle Order Batsmen
