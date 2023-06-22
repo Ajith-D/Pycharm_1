@@ -301,4 +301,3 @@ if __name__ == "__main__":
 
     # Close
     sys.exit(app.exec())
-
