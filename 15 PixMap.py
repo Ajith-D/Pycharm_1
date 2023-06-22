@@ -85,6 +85,7 @@ class AppForm:
         self.placement4.setLayout(self.hlayout)
 
 
+
 # 5 Execute Application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
