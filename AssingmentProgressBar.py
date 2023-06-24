@@ -153,7 +153,6 @@ class AppForm:
         self.pushb.clicked.connect(self.Events)
         QMetaObject.connectSlotsByName(self.dialog)
 
-
     def Events(self):
         output = '\n'
         root = self.line1.text()
