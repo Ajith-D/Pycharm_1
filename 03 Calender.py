@@ -44,7 +44,6 @@ out_height = 50
 out_x = 160
 out_y = (pushb_y + pushb_height) + 20
 
-
 # 3 Create Class
 class AppForm:
     def __init__(self, form):
