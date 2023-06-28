@@ -108,6 +108,7 @@ class AppForm:
         self.pushb.clicked.connect(self.Events)
         QMetaObject.connectSlotsByName(self.dialog)
 
+
     def Events(self):
         Task = self.line.text()
         appointment = self.cal.selectedDate().toString("yyyy-MM-dd")
