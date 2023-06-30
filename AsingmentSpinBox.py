@@ -286,7 +286,6 @@ class AppForm:
         \n3.Tomato {str(value3)} KG\n\n4.Potato {str(value4)} KG''')
 
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
