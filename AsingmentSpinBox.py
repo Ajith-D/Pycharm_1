@@ -285,7 +285,6 @@ class AppForm:
         self.out.setText(f'''1.Carrot {str(value1)} KG\n\n2.Onion {str(value2)} KG
         \n3.Tomato {str(value3)} KG\n\n4.Potato {str(value4)} KG''')
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
