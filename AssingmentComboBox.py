@@ -477,7 +477,6 @@ class AppForm:
     \n5.{self.com5.currentText()}-All rounder\n\n6.{self.com6.currentText()}All rounder\n\n7.{self.com7.currentText()}-All rounder
     \n8.{self.com8.currentText()}-Bowler\n\n9.{self.com9.currentText()}-Bowler\n\n10.{self.com10.currentText()}-Bowler''')
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     Form = QWidget()
