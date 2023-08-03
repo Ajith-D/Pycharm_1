@@ -39,12 +39,12 @@ def take_command():
 
     try:
         print("Recognizing your Voice...")
-        query = r.recognize_google(audio, language='en-in')
-        print(f"Hey! You said: {query}\n")
+        Query = r.recognize_google(audio, language='en-in')
+        print(f"Hey! You said: {Query}\n")
     except Exception as ex:
         print("Ajith, Can you say that again?")
         return "None"
-    return query
+    return Query
 
 def sendMail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -55,6 +55,17 @@ def sendMail(to, content):
     server.close()
 
 
+if __name__ == '__main__':
+    wishme()
+    while True:
+        query = take_command().upper()
 
+        if 'open wikipedia' in query:
+            speak('Searching Wikipedia...')
+            query = query.replace("Wikipedia", "")
+            results = wikipedia.summary(query, sentences=2)
+            speak("According to Wikipedia ")
+            print(results)
+            speak(results)
 
 
