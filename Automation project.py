@@ -68,4 +68,11 @@ if __name__ == '__main__':
             print(results)
             speak(results)
 
+        if 'open notepad' in query:
+            note_path = r"C:\Program Files\WindowsApps\Microsoft.WindowsNotepad_11.2305.18.0_x64__8wekyb3d8bbwe\Notepad\Notepad.exe"
+            os.startfile(note_path)
+
+        if 'open wps' in query:
+            wps_path = r"C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WPS Office\WPS Office Tools"
+
 
