@@ -72,7 +72,21 @@ if __name__ == '__main__':
             note_path = r"C:\Program Files\WindowsApps\Microsoft.WindowsNotepad_11.2305.18.0_x64__8wekyb3d8bbwe\Notepad\Notepad.exe"
             os.startfile(note_path)
 
-        if 'open wps' in query:
-            wps_path = r"C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WPS Office\WPS Office Tools"
+        elif 'open terminal' in query:
+            t_path = r"C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\System Tools\Command Prompt.lnk"
+            os.startfile(t_path)
+
+        elif 'open youtube' in query:
+            webbrowser.open("https://www.youtube.com/")
+
+        elif 'open Great Learning' in query:
+            webbrowser.open("https://www.mygreatlearning.com/academy")
+
+        elif 'open google' in query:
+            webbrowser.open("https://www.google.com/")
+
+        elif 'tell me the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Hey Ajith, the time is {strTime}")
 
 
