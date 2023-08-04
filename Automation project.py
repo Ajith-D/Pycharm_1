@@ -21,9 +21,9 @@ def wishme():
     1:00 pm - morning / 13:00 - afternoon
     18:00 - evening
     """
-    if hour >= 0 and hour <= 12:
+    if 0 <= hour <= 12:
         speak("Good Morning Ajith")
-    elif hour >= 12 and hour <= 18:
+    elif 12 <= hour <= 18:
         speak("Good Afternoon Ajith")
     else:
         speak("Good Evening Ajith")
@@ -32,7 +32,7 @@ def wishme():
 
 def take_command():
     r = sr.Recognizer()
-    with sr.Microphone as source:
+    with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
         audio = r.listen(source)
@@ -41,9 +41,11 @@ def take_command():
         print("Recognizing your Voice...")
         Query = r.recognize_google(audio, language='en-in')
         print(f"Hey! You said: {Query}\n")
-    except Exception as ex:
+
+    except Exception:
         print("Ajith, Can you say that again?")
         return "None"
+
     return Query
 
 def sendMail(to, content):
@@ -57,8 +59,9 @@ def sendMail(to, content):
 
 if __name__ == '__main__':
     wishme()
+
     while True:
-        query = take_command().upper()
+        query = take_command().lower()
 
         if 'open wikipedia' in query:
             speak('Searching Wikipedia...')
@@ -84,13 +87,13 @@ if __name__ == '__main__':
             webbrowser.open("https://www.mygreatlearning.com/academy")
 
         elif 'open google' in query:
-            webbrowser.open("https://www.google.com/")
+            webbrowser.open("google.com")
 
         elif 'open great learning youtube channels' in query:
             webbrowser.open("https://www.youtube.com/user/beaconelearning")
 
         elif 'open Linkedin' in query:
-            webbrowser.open("https://www.linkedin.com/feed/")
+            webbrowser.open("www.linkedin.com")
 
         elif 'email to other friend' in query:
             try:
@@ -103,6 +106,3 @@ if __name__ == '__main__':
             except Exception as ex:
                 print(ex)
                 speak('Unable to send the mail')
-
-
-
