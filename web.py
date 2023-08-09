@@ -1,3 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
+
+# By using route we can visit any pages without going to the homepage
+@app.route('/')
+def home():
+    return render_template("home.html")
+
+
+if __name__ == '__main__':
+    # Debug is used to save automatically
+    app.run(debug=True)
