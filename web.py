@@ -12,6 +12,7 @@ def help():
     return render_template("help.html")
 
 
+
 if __name__ == '__main__':
     # Debug is used to save automatically
     app.run(debug=True)
