@@ -125,6 +125,7 @@ class AppForm:
         self.out.setText(Tasks)
 
 
+
 # 6 Execute Application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
