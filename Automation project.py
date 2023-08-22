@@ -57,7 +57,6 @@ def sendMail(to, content):
     server.close()
 
 
-
 if __name__ == '__main__':
     wishme()
 
