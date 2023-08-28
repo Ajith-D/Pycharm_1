@@ -141,7 +141,6 @@ class AppForm:
             self.model.removeRow(char.row())
 
 
-
 # 5 Execute Application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
