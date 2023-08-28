@@ -9,7 +9,7 @@ def home():
 
 @app.route('/helpline')
 def help():
-    return render_template("help.html")
+    return render_template('help.html')
 
 if __name__ == '__main__':
     # Debug is used to save automatically
