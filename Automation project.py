@@ -30,6 +30,7 @@ def wishme():
 
     speak("Let me know How can I help you?")
 
+
 def take_command():
     r = sr.Recognizer()
     with sr.Microphone() as source:
