@@ -12,6 +12,10 @@ sSocial = set(social)
 
 # Union - To merge
 print(sTamil.union(smaths, sEnglish))
+
 # Intersection - To find common on the list
 print(sTamil.intersection(sSocial, sScience))
+
+# Difference - It will whether value already there or not
+print(sEnglish.difference(smaths))
 
