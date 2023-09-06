@@ -9,6 +9,7 @@ words = ['Ajith', 'Dry', 'Gym', 'ball']
 print(list(filter(vowels, words)))
 
 
+
 def div(num):
     if num%2 == 0 and num%3 == 0:
         return True
