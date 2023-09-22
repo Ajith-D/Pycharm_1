@@ -1,7 +1,7 @@
-list = [1, 2, 3, 0, 8, 7, 0, 10]
+list = [1, 2, 3, 0, 2, 5, 0, 7, 6]
 
-for item in list:
-    if item == 0:
-        list.remove(item)
-        list.append(item)
+for i in list:
+    if i == 0:
+        list.remove(i)
+        list.append(i)
 print(list)
