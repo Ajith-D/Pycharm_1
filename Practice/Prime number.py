@@ -1,10 +1,10 @@
 l = int(input('Enter: '))
-h = int(input('Enter: '))
+h = int(input('enter: '))
 
-for num in range(l, h + 1):
+for num in range( l, h + 1):
     if num > 1:
         for i in range(2, num):
-            if (num % i) == 0:
+            if num % i == 0:
                 break
         else:
             print(num)
