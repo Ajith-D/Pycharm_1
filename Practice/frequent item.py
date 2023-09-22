@@ -1,2 +1,2 @@
-num = [1, 2, 3, 1, 4, 6, 8, 2]
+num = [1, 2, 1, 5, 1, 6, 8, 4, 2]
 print(max(set(num), key=num.count))
