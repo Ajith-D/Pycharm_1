@@ -1,7 +1,7 @@
-list = [1, 2, 5, 2, 1, 6, 7, 1, 5, 8, 9, 10, 4]
+list = [2, 1, 4, 5, 7, 8, 9, 1, 3, 1, 10]
 r = []
 
-for char in list:
-    if char not in r:
-        r.append(char)
+for i in list:
+    if i not in r:
+        r.append(i)
 print(r)
