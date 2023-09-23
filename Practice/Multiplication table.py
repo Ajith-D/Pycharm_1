@@ -1,4 +1,5 @@
 num = int(input('Enter: '))
-for count in range(1, 11):
-    product = num * count
-    print(num, "X", count, "=", product)
+
+for i in range(1, 11):
+    product = num * 1
+    print(i, "X", num, "=", product)

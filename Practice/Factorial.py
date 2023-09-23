@@ -1,13 +1,11 @@
 import math
+num = int(input('Enter: '))
 
+def fac(num):
+    product = math.factorial(num)
+    return product
+print(fac(num))
 
-def fact(num):
-    factorial = math.factorial(num)
-    return factorial
+l = [1, 2, 3, 4, 5, 6]
 
-
-print(fact(1))
-
-l = [10, 3, 4, 5, 6, 7]
-
-print(list(map(fact, l)))
+print(list(map(fac, l)))
