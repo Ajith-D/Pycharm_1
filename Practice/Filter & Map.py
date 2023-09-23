@@ -1,3 +1,4 @@
+# Filter function
 def vowel(word):
     vow = ['a', 'e', 'i', 'o', 'u']
     for char in vow:
@@ -14,3 +15,11 @@ def div(num):
         return True
     return False
 print(div(6))
+
+# Map function
+def cube(num):
+    return num ** 3
+print(cube(6))
+
+c = [1, 2, 3, 4, 5, 6]
+print(list(map(cube, c)))
