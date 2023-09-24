@@ -4,4 +4,5 @@ for i in list:
     if i == 0:
         list.remove(i)
         list.append(i)
+
 print(list)
