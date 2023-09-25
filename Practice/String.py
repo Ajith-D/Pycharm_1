@@ -15,3 +15,6 @@ print(word.split())
 
 # To join the splitted words
 print(''.join(word))
+
+para = '    This is a sentence'
+print(para.strip())
