@@ -1,12 +1,13 @@
 import re
 
-para = 'Hi, This is Ajith, Iam Studying Python Advanced developer at Atomz research, Iam going for an IT Job'
-
+para = 'Hi, This is Ajith, Hi Iam Studying Python Advanced developer at Atomz research, Iam going for an IT Job'
+# To find all words
 print(re.findall('Hi', para))
 
 x = re.search('Ajith', para)
 print(x.start())
 
+# To substitute
 print(re.sub('Ajith', 'D Ajith', para))
 
 # Set of characters
