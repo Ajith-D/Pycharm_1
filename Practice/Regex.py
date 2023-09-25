@@ -25,6 +25,8 @@ print(re.findall('234$', para))
 
 # Zero or more occurrence *
 print(re.findall('Hi.*g', para))
+# to find until specific word
+print(re.findall('H.*20', para))
 
 # Specified number {}
 print(re.findall('A.{3}h', para))
