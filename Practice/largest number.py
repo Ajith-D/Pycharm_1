@@ -9,5 +9,5 @@ print(list[:5])
 # To print last 5 numbers
 print(list[-5:])
 
-# To find largest number
+# To find the largest number
 print(max(list))
