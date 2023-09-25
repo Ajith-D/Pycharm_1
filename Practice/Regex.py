@@ -29,10 +29,3 @@ print(re.findall('Hi.*g', para))
 # Specified number {}
 print(re.findall('A.{3}h', para))
 
-word = 'hi this is ajith from pondicherry'
-
-# To make all the first word caps
-print(word.title())
-
-#to split the words
-print(word.split())
