@@ -23,3 +23,6 @@ print(para.strip())
 # To count the specific word or character
 text: str = 'Ajith is a python developer and know to code'
 print(text.count('a'))
+
+# To convert a string value to the collection of code
+print(text.encode())
