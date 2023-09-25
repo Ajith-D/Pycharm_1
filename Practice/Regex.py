@@ -23,7 +23,7 @@ print(re.findall('^Hi', para))
 # End with $
 print(re.findall('234$', para))
 
-# Zero or more occurance *
+# Zero or more occurrence *
 print(re.findall('Hi.*g', para))
 
 # Specified number {}
