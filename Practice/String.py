@@ -16,5 +16,10 @@ print(word.split())
 # To join the splitted words
 print(''.join(word))
 
+# To cancel the extra spaces
 para = '    This is a sentence'
 print(para.strip())
+
+# To count the specific word or character
+text: str = 'Ajith is a python developer and know to code'
+print(text.count('a'))
