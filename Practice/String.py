@@ -12,3 +12,6 @@ print(word.title())
 
 #to split the words
 print(word.split())
+
+# To join the splitted words
+print(''.join(word))
