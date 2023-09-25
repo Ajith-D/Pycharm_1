@@ -14,3 +14,16 @@ para = 'Hi, This is Ajith, Iam Studying Python Advanced developer at Atomz resea
 print(re.findall("[0-9]", para))
 
 # Wildcard
+print(re.findall('A...h', para))
+
+# Start with ^
+print(re.findall('^Hi', para))
+
+# End with $
+print(re.findall('234$', para))
+
+# Zero or more occurance *
+print(re.findall('Hi.*g', para))
+
+# Specified number {}
+print(re.findall('A.{3}h', para))
