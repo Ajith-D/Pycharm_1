@@ -26,3 +26,7 @@ print(text.count('a'))
 
 # To convert a string value to the collection of code
 print(text.encode())
+
+# Format map
+data: dict = {'x': 1, 'y': 2}
+print(data.format_map())
