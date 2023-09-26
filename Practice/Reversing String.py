@@ -1,5 +1,3 @@
-name = 'Ajith'
-
-# Slicing [start : stop : step]
+name = 'Ajith Dhanasekaran'
 
 print(name[::-1])
