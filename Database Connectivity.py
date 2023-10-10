@@ -10,6 +10,7 @@ try:
     my_cursor = conn.cursor()
     print("You are Connected to Database 1 Successfully")
 
+
 except Exception as ex:
     print('Connection Error', ex)
 
