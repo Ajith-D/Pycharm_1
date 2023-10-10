@@ -105,6 +105,7 @@ lb8_height = 20
 lb8_x = 50
 lb8_y = (lb7_y + lb7_height) + 10
 
+
 # Box 8 Geometry
 com8_width = 100
 com8_height = 20
