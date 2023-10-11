@@ -24,5 +24,3 @@ while i<j:
 out = ''.join(l)
 print(out)
 
-colours = ['red', 'blue', 'green']
-print(''.join(colours))
