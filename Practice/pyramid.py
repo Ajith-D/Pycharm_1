@@ -1,4 +1,4 @@
-num  = int(input('Enter: '))
+num = int(input('Enter: '))
 
 for i in range(num):
     for j in range(i+1):
