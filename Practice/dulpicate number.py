@@ -6,3 +6,4 @@ for i in list:
         r.append(i)
 
 print(r)
+
