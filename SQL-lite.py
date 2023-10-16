@@ -136,9 +136,28 @@ class AppForm:
                 self.city_le.setText(city)
 
     def update(self):
+        query = f"SELECt * FROM students WHERE id = {int(self.id_line.text())}"
+        items = self.db.execute(query).fetchall()
+        if len(items) == 1:
+            query = f"""
+            UPDATE students SEt name = '{self.name_le.text()}',
+            age = '{self.age_le.text()}', joined = '{self.join_le.text()}',
+            completed = '{self.complete_le.text()}', city = '{self.city_le.text()}'
+            WHERE id = {self.id_line.text()}"""
+            print(query)
+            self.db.execute(query)
+            self.connection.commit()
+        else:
+            self.register()
 
 
 def main():
+    app = QApplication(sys.argv)
+    form = QWidget()
+    ui = AppForm(form)
+    ui.widget()
+    form.show()
+    sys.exit(app.exec())
 
 
 if __name__ == '__main__':
