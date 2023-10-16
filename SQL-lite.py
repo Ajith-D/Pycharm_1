@@ -97,12 +97,31 @@ class AppForm:
 
     def select(self):
         self.model.clear()
+        items = self.db.execute(f"SELECT * FROM students").fetchall()
+        for item in items:
+            id = QStandardItemModel(str(item[0]))
+            self.model.appendRow(id)
 
     def register(self):
+        items = self.db.execute(f"""SELECT * FROM students
+        WHERE id = {self.id.text()}""").fetchall()
 
     def delete(self):
+        id = int(self.id.text())
+        self.db.execute(f"DELETE FROM students WHERE id={id}")
+        self.connection.commit()
+        self.students()
 
-    def load(self):
+    def load(self, selected, deselection):
+
+        indexes = selected.indexes()
+        if indexes:
+            selected_indexes = indexes[0]
+            selected_item = str(self.model.data(selected_indexes))
+            items = self.db.execute(f"""SELECT * FROM students
+            WHERE id = {selected_item}""").fetchall()
+            if len(items) > 0:
+
 
     def update(self):
 
