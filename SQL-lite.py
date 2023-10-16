@@ -87,7 +87,16 @@ class AppForm:
         self.select()
         self.students.setModel(self.model)
 
+        #Set Signal
+        self.students.selectionModel().selectionChanged.connect(self.load)
+        self.pb_register.clicked.connect(self.register)
+        self.pb_update.clicked.connect(self.update)
+        self.pb_delete.clicked.connect(self.delete)
+
+        QMetaObject.connectSlotsByName(self.dialog)
+
     def select(self):
+        self.model.clear()
 
     def register(self):
 
