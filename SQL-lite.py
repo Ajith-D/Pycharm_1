@@ -77,6 +77,15 @@ class AppForm:
         self.h1.addLayout(self.v1)
         self.h1.addLayout(self.v2)
 
+        self.h2.addWidget(self.pb_register)
+        self.h2.addWidget(self.pb_update)
+        self.h2.addWidget(self.pb_delete)
+        self.h2.addWidget(self.pb_new)
+
+        self.dialog.setLayout(self.h1)
+
+        self.select()
+        self.students.setModel(self.model)
 
     def select(self):
 
