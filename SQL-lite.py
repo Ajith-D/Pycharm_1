@@ -6,6 +6,7 @@ import sqlite3
 
 class AppForm:
     def __int__(self, form):
+        #form = QWidget
         self.dialog = form
         self.dialog.setWindowTitle('Python SQLite')
         self.dialog.setStylesheet('background-color : black; color : white')
@@ -110,7 +111,7 @@ class AppForm:
         id = int(self.id.text())
         self.db.execute(f"DELETE FROM students WHERE id={id}")
         self.connection.commit()
-        self.students()
+        self.select()
 
     def load(self, selected, deselection):
 
@@ -150,15 +151,10 @@ class AppForm:
         else:
             self.register()
 
-
-def main():
-    app = QApplication(sys.argv)
-    form = QWidget()
-    ui = AppForm(form)
-    ui.widget()
-    form.show()
-    sys.exit(app.exec())
-
-
 if __name__ == '__main__':
-    main()
+    app = QApplication(sys.argv)
+    Form = QWidget()
+    ui = AppForm(Form)
+    ui.widget()
+    Form.show()
+    sys.exit(app.exec())
