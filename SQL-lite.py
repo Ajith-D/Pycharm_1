@@ -121,7 +121,19 @@ class AppForm:
             items = self.db.execute(f"""SELECT * FROM students
             WHERE id = {selected_item}""").fetchall()
             if len(items) > 0:
+                id = str(items[0][0])
+                name = str(items[0][1])
+                age = str(items[0][2])
+                joined = str(items[0][3])
+                completed = str(items[0][4])
+                city = str(items[0][5])
 
+                self.id_line.setText(id)
+                self.name_le.setText(name)
+                self.age_le.setText(age)
+                self.join_le.setText(joined)
+                self.complete_le.setText(completed)
+                self.city_le.setText(city)
 
     def update(self):
 
