@@ -39,7 +39,6 @@ class AppForm:
         self.connection = sqlite3.connect('Ajith.db')
         self.db = self.connection.cursor()
 
-
     def widget(self):
         self.title.setText('Registration')
         self.id.setText('Register No: ')
