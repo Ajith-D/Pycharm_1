@@ -13,6 +13,7 @@ try:
 except Exception as ex:
     print('Connection Error', ex)
 
+
 finally:
     conn.close()
     print("Connection Closed")
