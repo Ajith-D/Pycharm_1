@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_pymongo import PyMongo
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
-#import flask_bcrypt
+import flask_bcrypt
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = "mongodb+srv://ajithd2047:<password>@cluster0.iv7n12g.mongodb.net/?retryWrites=true&w=majority"
-app.config['JWT_SECRET_KEY'] = "your_secret_key"
+app.config['MONGO_URI'] = "mongodb+srv://ajithd2047:<s0IFJDqwrMPGXplR>@cluster0.iv7n12g.mongodb.net/"
+app.config['JWT_SECRET_KEY'] = "s0IFJDqwrMPGXplR"
 mongo = PyMongo(app)
 bcrypt = flask_bcrypt.Bcrypt(app)
 jwt = JWTManager(app)
@@ -13,15 +13,15 @@ jwt = JWTManager(app)
 @app.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
-    first_name = data['first_name']
-    last_name = data['last_name']
-    email = data['email']
+    first_name = data['Ajith']
+    last_name = data['D']
+    email = data['ajith.d2007@gmail.com']
     password = bcrypt.generate_password_hash(data['password']).decode('utf-8')
 
     user_data = {
-        'first_name': first_name,
-        'last_name': last_name,
-        'email': email,
+        'Ajith': first_name,
+        'D': last_name,
+        'ajith.d2007@gmail.com': email,
         'password': password,
     }
 
@@ -32,10 +32,10 @@ def register():
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
-    email = data['email']
+    email = data['ajith.d2007@gmail.com']
     password = data['password']
 
-    user = mongo.db.users.find_one({'email': email})
+    user = mongo.db.users.find_one({'ajith.d2007@gmail.com': email})
 
     if user and bcrypt.check_password_hash(user['password'], password):
         access_token = create_access_token(identity=str(user['_id']))
