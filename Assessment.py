@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_pymongo import PyMongo
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required
-import flask_bcrypt
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+#import flask_bcrypt
 
-app = Flask(__name)
-app.config['MONGO_URI'] = "your_mongodb_uri"
+app = Flask(__name__)
+app.config['MONGO_URI'] = "mongodb+srv://ajithd2047:<password>@cluster0.iv7n12g.mongodb.net/?retryWrites=true&w=majority"
 app.config['JWT_SECRET_KEY'] = "your_secret_key"
 mongo = PyMongo(app)
-bcrypt = Bcrypt(app)
+bcrypt = flask_bcrypt.Bcrypt(app)
 jwt = JWTManager(app)
 
 @app.route('/register', methods=['POST'])
