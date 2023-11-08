@@ -68,6 +68,7 @@ def get_all_templates():
     templates = list(mongo.db.templates.find({'user_id': user_id}, {'user_id': 0}))
     return jsonify(templates), 200
 
+
 @app.route('/template/<template_id>', methods=['GET', 'PUT', 'DELETE'])
 @jwt_required
 def template(template_id):
