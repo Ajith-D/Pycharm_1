@@ -61,6 +61,7 @@ def insert_template():
     template_id = mongo.db.templates.insert(template_data)
     return jsonify(message='Template added successfully', template_id=str(template_id)), 201
 
+
 @app.route('/template', methods=['GET'])
 @jwt_required
 def get_all_templates():
