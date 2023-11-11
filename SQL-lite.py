@@ -4,6 +4,7 @@ from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 import sqlite3
 
+
 class AppForm:
     def __int__(self, form):
         #form = QWidget
