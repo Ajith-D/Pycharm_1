@@ -18,6 +18,7 @@ while i < j:
         j -= 1
     else:
         l[i], l[j] = l[j], l[i]
+
         i += 1
         j -= 1
 out = ''.join(l)
