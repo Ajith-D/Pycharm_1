@@ -1,7 +1,8 @@
 str = 'This is Ajith Dhanasekaran'
 l = str.split()[::-1]
-r = []
+out = []
 
-for char in l:
-    r.append(char)
-print(' '.join(r))
+for i in l:
+    if i not in out:
+        out.append(i)
+print(' '.join(out))
