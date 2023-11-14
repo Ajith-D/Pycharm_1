@@ -8,7 +8,7 @@ print('y=', y)
 # Swapping first and last elements
 l = [1, 2, 3, 4, 5, 6]
 
-l[0], l[-1] = l[-1], l[0]
+l[0], l[-2] = l[-2], l[0]
 print(l)
 
 # Swapping first and third elements
