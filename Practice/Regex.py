@@ -8,7 +8,7 @@ x = re.search('Ajith', para)
 print(x.start())
 
 # To substitute
-print(re.sub('Ajith', 'D Ajith', para))
+print(re.sub('Ajith', 'Ajith D', para))
 
 # Set of characters
 para = 'Hi, This is Ajith, Iam Studying Python Advanced developer at Aatomz research my number is 9876543234'
