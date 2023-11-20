@@ -56,7 +56,6 @@ def sendMail(to, content):
     server.sendmail('ajith.d2007@gmail.com', to, content)
     server.close()
 
-
 if __name__ == '__main__':
     wishme()
 
