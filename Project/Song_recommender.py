@@ -178,6 +178,7 @@ class SongRecommender(QMainWindow):
             event.ignore()
 
 
+
 def main():
     app = QApplication(sys.argv)
 
