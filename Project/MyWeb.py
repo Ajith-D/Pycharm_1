@@ -20,7 +20,6 @@ def track():
         return render_template('track.html', endurl=resp, redirect=redirect_url)
 
 
-
 if __name__ == '__main__':
     # Debug is used to save automatically
     app.run(debug=True)
